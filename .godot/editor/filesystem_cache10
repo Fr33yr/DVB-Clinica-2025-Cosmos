@@ -1,0 +1,21 @@
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1754708970
+export_presets.cfg::TextFile/TextFile::-1::1754523474::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D/CompressedTexture2D::6287442917828205599::1754441033::1754441040::1::::<><><>0<>0<>7d2e3aa03501d1cb7255094f13fc16a1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1754611884
+Joystick.png::CompressedTexture2D/CompressedTexture2D::5832525963505210492::1754611883::1754611884::1::::<><><>0<>0<>c242d43b865f3b0b1a6e905315d90cff<>res://.godot/imported/Joystick.png-63ba604b167fe1a28230029fcfc4cd8b.ctex::
+::res://assets/VirtualJoystickPack/::1754611884
+Joystick.png::CompressedTexture2D/CompressedTexture2D::4510692671735925249::1754611855::1754611884::1::::<><><>0<>0<>dcb725975b391d551f11d84aaf08cdf9<>res://.godot/imported/Joystick.png-ea9b9b3608871cf67925ea9c17bf90c6.ctex::
+JoystickPack Preview.png::CompressedTexture2D/CompressedTexture2D::7400677979505777531::1754611855::1754611884::1::::<><><>0<>0<>60455f43c969d868a1aff9d39c0a7c61<>res://.godot/imported/JoystickPack Preview.png-d097f0abbbe3a2e1979130f023e359b7.ctex::
+JoystickPack.png::CompressedTexture2D/CompressedTexture2D::3032179627244931541::1754611855::1754611884::1::::<><><>0<>0<>ea4bf3b58f66cff4b3eddf3770648728<>res://.godot/imported/JoystickPack.png-5d316a99dd28074532c3ae35327f2248.ctex::
+JoystickSplitted.png::CompressedTexture2D/CompressedTexture2D::1145240211560113189::1754611855::1754611884::1::::<><><>0<>0<>01b355d7be6d597036f98ba338587265<>res://.godot/imported/JoystickSplitted.png-3411479b0a9764df3d23f59058aa6718.ctex::
+LargeHandleFilled.png::CompressedTexture2D/CompressedTexture2D::2454132395195016329::1754611855::1754611884::1::::<><><>0<>0<>2eea246e47aef6f808f6a1e6c51fd96f<>res://.godot/imported/LargeHandleFilled.png-cdfbae09b40737a2a4152bee68b1a9a3.ctex::
+LargeHandleFilledGrey.png::CompressedTexture2D/CompressedTexture2D::1749620850951293848::1754611855::1754611884::1::::<><><>0<>0<>68f0691848b0649514bbf9548e73cd21<>res://.godot/imported/LargeHandleFilledGrey.png-e25a8254e669e293fbfa9b242ad38f74.ctex::
+SmallHandle.png::CompressedTexture2D/CompressedTexture2D::4036565955728455394::1754611855::1754611884::1::::<><><>0<>0<>dab11b7bf66a594e267cd05aa9d88189<>res://.godot/imported/SmallHandle.png-a3cef13aa750a04c41b4c58ea0626f53.ctex::
+SmallHandleFilled.png::CompressedTexture2D/CompressedTexture2D::7691969194391522982::1754611855::1754611884::1::::<><><>0<>0<>15c5f963661d6a2900b0b4561cf6422c<>res://.godot/imported/SmallHandleFilled.png-528fb50e76e78f83229e23d2b7912114.ctex::
+SmallHandleFilledGrey.png::CompressedTexture2D/CompressedTexture2D::7610859505100193497::1754611855::1754611884::1::::<><><>0<>0<>408b5bfc87b30e71ae15e8ff0b12b6d5<>res://.godot/imported/SmallHandleFilledGrey.png-15a2d12dc4aded4403287cd4ecd4673f.ctex::
+::res://scenes/::1754708695
+main.tscn::PackedScene::5431730646418617356::1754708695::0::1::::<><><>0<>0<><>::uid://cvtxjb1xddhgp::::res://icon.svg<>uid://fp17tmqet8mj::::res://scripts/player.gd<>uid://cu8o4231ogxuo::::res://scripts/controller.gd<>uid://b5japjmvdt7ij::::res://assets/VirtualJoystickPack/Joystick.png<>uid://dgo00kfwi7uw4::::res://assets/VirtualJoystickPack/SmallHandleFilledGrey.png
+::res://scripts/::1754707352
+controller.gd::GDScript::6245645994538065250::1754707352::0::1::::<>CanvasLayer<><>0<>0<><>::
+player.gd::GDScript::383546688932346493::1754704842::0::1::::<>CharacterBody2D<><>0<>0<><>::
