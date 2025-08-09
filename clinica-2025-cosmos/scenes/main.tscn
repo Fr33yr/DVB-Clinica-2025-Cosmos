@@ -34,14 +34,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_0wfyh")
 
-[node name="Stick" type="TouchScreenButton" parent="UI/Control"]
-position = Vector2(1160, 600)
+[node name="Stick_Right" type="TouchScreenButton" parent="UI/Control"]
+position = Vector2(1163, 609)
 scale = Vector2(0.223333, 0.223333)
 texture_normal = ExtResource("3_sugp2")
 shape = SubResource("RectangleShape2D_jyhfs")
 
-[node name="Stick2" type="TouchScreenButton" parent="UI/Control"]
-position = Vector2(80, 584)
+[node name="Stick_Left" type="TouchScreenButton" parent="UI/Control"]
+position = Vector2(58, 591)
 scale = Vector2(0.223, 0.223)
 texture_normal = ExtResource("3_sugp2")
 shape = SubResource("RectangleShape2D_tbgi4")

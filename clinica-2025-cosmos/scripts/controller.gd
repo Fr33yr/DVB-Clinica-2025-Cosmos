@@ -1,7 +1,7 @@
 extends Control
 
-@onready var left_stick = $Stick
-@onready var right_stick = $Stick2
+@onready var stick_right = $Stick_Right
+@onready var stick_left = $Stick_Left
 
 signal left_stick_drag(direction: Vector2)
 signal right_stick_drag(direction: Vector2)
@@ -20,12 +20,10 @@ func _input(event):
 			print("Touch ended at:", event.position)
 	elif event is InputEventScreenDrag:
 		if event.position.x < viewport.x / 2: # Left stick area
-			var stick_center = left_stick.global_position + left_stick.position
-			var drag_direction: Vector2 = event.position - left_stick.global_position
+			var drag_direction: Vector2 = event.position - stick_left.global_position
 			emit_signal("left_stick_drag", drag_direction.normalized())
 		elif event.position.x >= viewport.x * 0.5: # Right stick area
-			var stick_center = right_stick.global_position + right_stick.position
-			var drag_direction: Vector2 = event.position - right_stick.global_position
+			var drag_direction: Vector2 = event.position - stick_right.global_position
 			emit_signal("right_stick_drag", drag_direction.normalized())
 		else:
 			print("outside")
