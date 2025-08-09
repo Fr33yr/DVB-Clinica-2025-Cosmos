@@ -1,9 +1,0 @@
-DirectionalLight2D
-Control
-ColorRect
-TouchScreenButton
-CanvasLayer
-Node2D
-Sprite2D
-CollisionShape2D
-CharacterBody2D
