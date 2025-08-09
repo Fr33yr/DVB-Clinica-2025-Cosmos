@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://vn7htn43g5t4"]
+
+[ext_resource type="Script" uid="uid://dxy6bc066u671" path="res://scripts/player.gd" id="1_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://csg0ytppfphm4" path="res://icon.svg" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://cl15ns4gq8nci" path="res://scripts/controller.gd" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://bkvx2dpbq2ki2" path="res://assets/VirtualJoystickPack/Joystick.png" id="3_sugp2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
+
+[node name="main" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(675, 350)
+script = ExtResource("1_jyhfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(2.38419e-07, -2.38419e-07)
+scale = Vector2(0.171875, 0.171875)
+texture = ExtResource("1_o5qli")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_0wfyh")
+
+[node name="Stick" type="TouchScreenButton" parent="UI/Control"]
+position = Vector2(1160, 600)
+scale = Vector2(0.223333, 0.223333)
+texture_normal = ExtResource("3_sugp2")
+shape = SubResource("RectangleShape2D_jyhfs")
+
+[node name="Stick2" type="TouchScreenButton" parent="UI/Control"]
+position = Vector2(80, 584)
+scale = Vector2(0.223, 0.223)
+texture_normal = ExtResource("3_sugp2")
+shape = SubResource("RectangleShape2D_tbgi4")
+
+[connection signal="left_stick_drag" from="UI/Control" to="Player" method="_on_control_left_stick_drag"]
+[connection signal="right_stick_drag" from="UI/Control" to="Player" method="_on_control_right_stick_drag"]
