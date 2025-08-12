@@ -16,5 +16,5 @@ func _on_control_left_stick_drag(direction):
 
 
 func _on_control_right_stick_drag(direction):
-	print("direction right stick: ", direction)
 	move_direction = direction
+	print("player position: ", global_position)
