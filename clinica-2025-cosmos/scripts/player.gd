@@ -17,3 +17,11 @@ func _process(delta):
 	# Rotation from right stick (aim)
 	if right_stick and right_stick.is_pressed:
 		rotation = right_stick.output.angle()
+
+
+func _on_shuffle_pressed():
+	print("Shuffle!")
+
+
+func _on_power_up_pressed():
+	print("PowerUp!")

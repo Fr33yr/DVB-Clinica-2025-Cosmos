@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rdi1wwsvg2cu"
-path="res://.godot/imported/SmallHandle.png-a3cef13aa750a04c41b4c58ea0626f53.ctex"
+uid="uid://df8y1qsei7x2r"
+path="res://.godot/imported/a.png-704d8df7a98c3a8763a09341d5d5cf00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/VirtualJoystickPack/SmallHandle.png"
-dest_files=["res://.godot/imported/SmallHandle.png-a3cef13aa750a04c41b4c58ea0626f53.ctex"]
+source_file="res://assets/Buttons/a.png"
+dest_files=["res://.godot/imported/a.png-704d8df7a98c3a8763a09341d5d5cf00.ctex"]
 
 [params]
 
