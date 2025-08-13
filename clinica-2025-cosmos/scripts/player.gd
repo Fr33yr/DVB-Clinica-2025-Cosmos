@@ -1,19 +1,19 @@
 extends CharacterBody2D
 
+@export var speed : float = 100
 
-var move_direction :Vector2
-var aim_direction :Vector2
-var speed = 600
+@export var left_stick : VirtualJoystick
+@export var right_stick : VirtualJoystick
 
+var aim_vector: float
 
-func _physics_process(delta):
-	velocity = move_direction * speed
-	move_and_slide()
+func _process(delta):
+	# Movement from left stick 
+	var move_vector := Vector2.ZERO
+	if left_stick and left_stick.is_pressed:
+		move_vector = left_stick.output.normalized()
+	position += move_vector * speed * delta
 
-func _on_control_left_stick_drag(direction):
-	if direction != Vector2.ZERO:
-		rotation = direction.angle()
-
-
-func _on_control_right_stick_drag(direction):
-	move_direction = direction
+	# Rotation from right stick (aim)
+	if right_stick and right_stick.is_pressed:
+		rotation = right_stick.output.angle()

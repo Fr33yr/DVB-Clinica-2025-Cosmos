@@ -1,21 +1,35 @@
-[gd_scene load_steps=8 format=3 uid="uid://vn7htn43g5t4"]
+[gd_scene load_steps=6 format=3 uid="uid://vn7htn43g5t4"]
 
 [ext_resource type="Script" uid="uid://dxy6bc066u671" path="res://scripts/player.gd" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://csg0ytppfphm4" path="res://icon.svg" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://cl15ns4gq8nci" path="res://scripts/controller.gd" id="2_0wfyh"]
-[ext_resource type="Texture2D" uid="uid://bkvx2dpbq2ki2" path="res://assets/VirtualJoystickPack/Joystick.png" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://br5duginld5kn" path="res://assets/chess_bg.png" id="5_tbgi4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
-
 [node name="main" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="RightStick" parent="UI" instance=ExtResource("1_tbgi4")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+
+[node name="LeftStick" parent="UI" instance=ExtResource("1_tbgi4")]
+offset_top = -300.0
+offset_bottom = 0.0
+
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("left_stick", "right_stick")]
 position = Vector2(675, 350)
 script = ExtResource("1_jyhfs")
+left_stick = NodePath("../UI/LeftStick")
+right_stick = NodePath("../UI/RightStick")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_0xm2m")
@@ -27,26 +41,7 @@ texture = ExtResource("1_o5qli")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("2_0wfyh")
-
-[node name="Stick_Right" type="TouchScreenButton" parent="UI/Control"]
-position = Vector2(1163, 609)
-scale = Vector2(0.223333, 0.223333)
-texture_normal = ExtResource("3_sugp2")
-shape = SubResource("RectangleShape2D_jyhfs")
-
-[node name="Stick_Left" type="TouchScreenButton" parent="UI/Control"]
-position = Vector2(58, 591)
-scale = Vector2(0.223, 0.223)
-texture_normal = ExtResource("3_sugp2")
-shape = SubResource("RectangleShape2D_tbgi4")
-
-[connection signal="left_stick_drag" from="UI/Control" to="Player" method="_on_control_left_stick_drag"]
-[connection signal="right_stick_drag" from="UI/Control" to="Player" method="_on_control_right_stick_drag"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(677, 352)
+texture = ExtResource("5_tbgi4")
