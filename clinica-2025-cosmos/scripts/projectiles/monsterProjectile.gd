@@ -1,0 +1,3 @@
+extends Projectile
+
+class_name MonsterProjectile

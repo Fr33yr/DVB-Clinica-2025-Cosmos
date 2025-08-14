@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://vn7htn43g5t4"]
+[gd_scene load_steps=6 format=3 uid="uid://vn7htn43g5t4"]
 
-[ext_resource type="Script" uid="uid://drc1c4v3g310a" path="res://scripts/GameLevel.gd" id="1_croed"]
+[ext_resource type="Script" uid="uid://drc1c4v3g310a" path="res://scripts/commons/GameLevel.gd" id="1_croed"]
 [ext_resource type="Texture2D" uid="uid://br5duginld5kn" path="res://assets/chess_bg.png" id="2_7sn1t"]
 [ext_resource type="PackedScene" uid="uid://bhsvn7klaynmo" path="res://scenes/UI/screenControls.tscn" id="3_hu8pu"]
 [ext_resource type="PackedScene" uid="uid://dmd2rv33dxeu2" path="res://scenes/player.tscn" id="4_j30t8"]
+[ext_resource type="PackedScene" uid="uid://c8h0l611mr476" path="res://scenes/monsters/monsterAquatic.tscn" id="5_7sn1t"]
 
 [node name="GameLevel" type="Node2D"]
 script = ExtResource("1_croed")
@@ -23,3 +24,72 @@ position = Vector2(675, 350)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="ProjectileContainer" type="Node" parent="."]
+
+[node name="MonsterAquatic" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(698, -439)
+
+[node name="MonsterAquatic2" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(920, -389)
+
+[node name="MonsterAquatic3" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(1103, -280)
+
+[node name="MonsterAquatic4" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(1287, -117)
+
+[node name="MonsterAquatic5" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(1425, 67)
+
+[node name="MonsterAquatic6" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(1471, 259)
+
+[node name="MonsterAquatic7" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(1450, 522)
+
+[node name="MonsterAquatic8" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(1366, 739)
+
+[node name="MonsterAquatic9" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(1149, 927)
+
+[node name="MonsterAquatic10" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(978, 1048)
+
+[node name="MonsterAquatic11" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(790, 1136)
+
+[node name="MonsterAquatic12" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(610, 1107)
+
+[node name="MonsterAquatic13" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(422, 1082)
+
+[node name="MonsterAquatic14" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(301, 973)
+
+[node name="MonsterAquatic15" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(163, 814)
+
+[node name="MonsterAquatic16" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(55, 656)
+
+[node name="MonsterAquatic17" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(-20, 443)
+
+[node name="MonsterAquatic18" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(-83, 267)
+
+[node name="MonsterAquatic19" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(-50, 71)
+
+[node name="MonsterAquatic20" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(30, -113)
+
+[node name="MonsterAquatic21" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(138, -292)
+
+[node name="MonsterAquatic22" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(293, -397)
+
+[node name="MonsterAquatic23" parent="." instance=ExtResource("5_7sn1t")]
+position = Vector2(489, -455)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://da5r8pvtksad1"]
+
+[ext_resource type="Script" uid="uid://donm75j4h1dxx" path="res://scripts/projectiles/playerBasicCard.gd" id="1_41t6e"]
+[ext_resource type="Texture2D" uid="uid://h6xsbh54oflv" path="res://assets/Sketches/cartas bullet.png" id="2_183ou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jyp0"]
+size = Vector2(82.9999, 52.0003)
+
+[node name="PlayerBasicCard" type="Area2D"]
+z_index = -1
+y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_41t6e")
+speed = null
+direction = null
+damage = null
+metadata/_custom_type_script = "uid://bwiwomkdhgdqk"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_183ou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -0.500044)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_6jyp0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(4, -2)
+scale = Vector2(4.4, 6.1)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

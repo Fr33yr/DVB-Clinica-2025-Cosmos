@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://50khjaacijk3"]
+
+[ext_resource type="Script" uid="uid://cyg3fhwecdeg5" path="res://scripts/ui/hp_bar.gd" id="1_3cwcl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwvtm"]
+bg_color = Color(0, 0, 0, 0.705882)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80yqp"]
+bg_color = Color(0.882821, 0.0136228, 3.85046e-07, 1)
+border_color = Color(0.447059, 0.447059, 0.447059, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="HP_Bar" type="ProgressBar"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -236.0
+offset_right = 66.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wwvtm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_80yqp")
+step = 1.0
+value = 100.0
+rounded = true
+show_percentage = false
+script = ExtResource("1_3cwcl")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://crgida75on2ul"]
+
+[ext_resource type="Script" uid="uid://cxrg6pmywnvaa" path="res://scripts/projectiles/monsterProjectile.gd" id="1_doctu"]
+[ext_resource type="Texture2D" uid="uid://c8ucsikg2q7y6" path="res://assets/Sketches/bullet malos.png" id="2_vo8cw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lump5"]
+radius = 41.6924
+
+[node name="monsterProjectile" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_doctu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_vo8cw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -0.500044)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_lump5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-4.76837e-07, -2)
+scale = Vector2(4.8, 5.3)

@@ -18,9 +18,9 @@ func _physics_process(delta):
 	position += velocity * delta
 	
 func _on_screen_exited():
-	destroy_bubble()
+	destroy_projectile()
 
-func destroy_bubble():
+func destroy_projectile():
 	# Disable children nodes!!!
 	#await get_tree().create_timer(0.07).timeout
 	queue_free()
