@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://da5r8pvtksad1"]
 
-[ext_resource type="Script" uid="uid://donm75j4h1dxx" path="res://scripts/projectiles/playerprojectile.gd" id="1_2kl0r"]
+[ext_resource type="Script" uid="uid://donm75j4h1dxx" path="res://scripts/projectiles/playerBasicCard.gd" id="1_2kl0r"]
 [ext_resource type="Texture2D" uid="uid://h6xsbh54oflv" path="res://assets/Sketches/cartas bullet.png" id="2_ykd17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jyp0"]

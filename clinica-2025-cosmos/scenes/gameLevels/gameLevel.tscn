@@ -8,14 +8,14 @@
 [node name="GameLevel" type="Node2D"]
 script = ExtResource("1_croed")
 
+[node name="ScreenControls" parent="." instance=ExtResource("3_hu8pu")]
+
 [node name="Background" type="Sprite2D" parent="."]
 show_behind_parent = true
 z_index = -5
 y_sort_enabled = true
 position = Vector2(677, 352)
 texture = ExtResource("2_7sn1t")
-
-[node name="ScreenControls" parent="." instance=ExtResource("3_hu8pu")]
 
 [node name="Player" parent="." instance=ExtResource("4_j30t8")]
 position = Vector2(675, 350)
