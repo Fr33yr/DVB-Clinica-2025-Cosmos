@@ -32,7 +32,7 @@ enum Visibility_mode {
 }
 
 ## If the joystick is always visible, or is shown only if there is a touchscreen
-@export var visibility_mode := Visibility_mode.ALWAYS
+@export var visibility_mode := Visibility_mode.TOUCHSCREEN_ONLY
 
 ## If true, the joystick uses Input Actions (Project -> Project Settings -> Input Map)
 @export var use_input_actions := true

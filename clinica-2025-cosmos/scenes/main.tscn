@@ -1,13 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://vn7htn43g5t4"]
+[gd_scene load_steps=6 format=3 uid="uid://vn7htn43g5t4"]
 
-[ext_resource type="Script" uid="uid://dxy6bc066u671" path="res://scripts/player.gd" id="1_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://csg0ytppfphm4" path="res://icon.svg" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://cawcjenrvtf8n" path="res://assets/Buttons/b.png" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://df8y1qsei7x2r" path="res://assets/Buttons/a.png" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://dmd2rv33dxeu2" path="res://scenes/player.tscn" id="4_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://br5duginld5kn" path="res://assets/chess_bg.png" id="5_tbgi4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 
 [node name="main" type="Node2D"]
 
@@ -22,32 +19,56 @@ offset_top = -300.0
 offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
+action_left = "aim_left"
+action_right = "aim_right"
+action_up = "aim_up"
+action_down = "aim_down"
 
 [node name="LeftStick" parent="UI" instance=ExtResource("1_tbgi4")]
 offset_top = -300.0
 offset_bottom = 0.0
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_up"
+action_down = "move_down"
 
-[node name="Shuffle" type="TouchScreenButton" parent="UI"]
-position = Vector2(93, 339)
+[node name="Suffle_Anchor" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -300.0
+offset_right = -250.0
+offset_bottom = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Shuffle" type="TouchScreenButton" parent="UI/Suffle_Anchor"]
 texture_normal = ExtResource("2_tefeu")
+action = "shuffle"
+visibility_mode = 1
 
-[node name="PowerUp" type="TouchScreenButton" parent="UI"]
-position = Vector2(1080, 332)
+[node name="PowerUp_Anchor" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 250.0
+offset_top = -300.0
+offset_right = 350.0
+offset_bottom = -200.0
+grow_vertical = 0
+
+[node name="PowerUp" type="TouchScreenButton" parent="UI/PowerUp_Anchor"]
 texture_normal = ExtResource("3_o6xl0")
+action = "powerup"
+visibility_mode = 1
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("left_stick", "right_stick")]
+[node name="Player" parent="." instance=ExtResource("4_tbgi4")]
 position = Vector2(675, 350)
-script = ExtResource("1_jyhfs")
-left_stick = NodePath("../UI/LeftStick")
-right_stick = NodePath("../UI/RightStick")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_0xm2m")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(2.38419e-07, -2.38419e-07)
-scale = Vector2(0.171875, 0.171875)
-texture = ExtResource("1_o5qli")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
@@ -56,5 +77,5 @@ show_behind_parent = true
 position = Vector2(677, 352)
 texture = ExtResource("5_tbgi4")
 
-[connection signal="pressed" from="UI/Shuffle" to="Player" method="_on_shuffle_pressed"]
-[connection signal="pressed" from="UI/PowerUp" to="Player" method="_on_power_up_pressed"]
+[connection signal="pressed" from="UI/Suffle_Anchor/Shuffle" to="Player" method="_on_shuffle_pressed"]
+[connection signal="pressed" from="UI/PowerUp_Anchor/PowerUp" to="Player" method="_on_power_up_pressed"]
