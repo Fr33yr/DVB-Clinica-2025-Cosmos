@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://da5r8pvtksad1"]
+
+[ext_resource type="Script" uid="uid://donm75j4h1dxx" path="res://scripts/projectiles/playerprojectile.gd" id="1_2kl0r"]
+[ext_resource type="Texture2D" uid="uid://c1wropqvinms4" path="res://assets/projectiles/multicannon_bullet.png" id="2_ykd17"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kl0r"]
+radius = 4.0
+height = 24.0
+
+[node name="Playerprojectile" type="Area2D"]
+script = ExtResource("1_2kl0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2kl0r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_ykd17")
