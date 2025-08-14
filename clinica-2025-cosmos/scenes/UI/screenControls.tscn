@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhsvn7klaynmo"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_7e3k0"]
+[ext_resource type="Texture2D" uid="uid://cmn81btag3823" path="res://assets/Buttons/button_circle.png" id="2_m41qk"]
+[ext_resource type="Texture2D" uid="uid://dtc8a664ouhmi" path="res://assets/Buttons/icon_burst.svg" id="3_35jxk"]
+[ext_resource type="Texture2D" uid="uid://myrplcfpbx23" path="res://assets/Buttons/icon_button_r.svg" id="4_tpnoy"]
+[ext_resource type="Texture2D" uid="uid://cio8s5lctgtq8" path="res://assets/Buttons/icon_fire.svg" id="5_vb61p"]
+
+[node name="ScreenControls" type="CanvasLayer"]
+
+[node name="RightStick" parent="." instance=ExtResource("1_7e3k0")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+action_left = "aim_left"
+action_right = "aim_right"
+action_up = "aim_up"
+action_down = "aim_down"
+
+[node name="Base" parent="RightStick" index="0"]
+texture = ExtResource("2_m41qk")
+
+[node name="Tip" parent="RightStick/Base" index="0"]
+texture = ExtResource("3_35jxk")
+
+[node name="LeftStick" parent="." instance=ExtResource("1_7e3k0")]
+offset_top = -300.0
+offset_bottom = 0.0
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_up"
+action_down = "move_down"
+
+[node name="Base" parent="LeftStick" index="0"]
+texture = ExtResource("2_m41qk")
+
+[node name="Suffle_Anchor" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -370.0
+offset_top = -350.0
+offset_right = -370.0
+offset_bottom = -350.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Suffle_Anchor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_m41qk")
+
+[node name="Shuffle" type="TouchScreenButton" parent="Suffle_Anchor/TextureRect"]
+position = Vector2(40, 40)
+texture_normal = ExtResource("4_tpnoy")
+action = "shuffle"
+visibility_mode = 1
+
+[node name="PowerUp_Anchor" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1670.0
+offset_top = -350.0
+offset_right = -1670.0
+offset_bottom = -350.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="PowerUp_Anchor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_m41qk")
+
+[node name="PowerUp" type="TouchScreenButton" parent="PowerUp_Anchor/TextureRect"]
+position = Vector2(40, 40)
+texture_normal = ExtResource("5_vb61p")
+action = "powerup"
+visibility_mode = 1
+
+[editable path="RightStick"]
+[editable path="LeftStick"]

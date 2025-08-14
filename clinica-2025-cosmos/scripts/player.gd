@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+class_name Player
+
+signal projectile_shot
+
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var sprite_2d = $Sprite2D
 @onready var shooting_timer = $ShootingTimer
@@ -8,11 +12,12 @@ extends CharacterBody2D
 var move_speed : float = 750
 var friction : float = 1000
 
+var stronger_fire_mode: bool = false
 var rapid_fire_mode: bool = false
 var rapid_fire_duration: float = 10.0
 
 var fire_delay_normal: float = 0.2
-var fire_delay_fast: float = 0.15
+var fire_delay_fast: float = 0.1
 
 var character_direction : Vector2
 var aim_direction : Vector2
@@ -25,8 +30,6 @@ func _process(delta):
 	aiming_input()
 	buttons_input()
 	manage_shooting()
-	
-	
 	# manage_animation()
 		
 	if character_direction != Vector2.ZERO:
@@ -58,15 +61,16 @@ func aiming_input():
 		aim_direction = direction.normalized()
 
 func buttons_input():
-	if Input.is_action_pressed("shuffle"):
-		print("Shuffling!")
+	if Input.is_action_just_pressed("shuffle"):
+		print("Shuffle!")
 		
-	if Input.is_action_pressed("powerup"):
+	if Input.is_action_just_pressed("powerup"):
 		print("POWERUP!")
 
+# Manages shooting time delay.
 func manage_shooting():
 	var firing: bool
-	if aim_direction.x > 0.2 || aim_direction.y < 0.2:
+	if aim_direction.x != 0 || aim_direction.y != 0:
 		firing = true
 	
 	if firing && shooting_timer.is_stopped():
@@ -77,8 +81,15 @@ func manage_shooting():
 			shooting_timer.start(fire_delay_normal)
 			shoot()
 
+# Manages projectile generation and type.
 func shoot():
-		print("Firing!")
+	if aim_direction == Vector2.ZERO: 
+		pass
+	var projectile = preload("res://scenes/projectiles/playerprojectile.tscn")
+	if stronger_fire_mode == true:
+		projectile_shot.emit(projectile, muzzle.global_position)
+	else:
+		projectile_shot.emit(projectile, muzzle.global_position)
 
 func check_connected_joypad():
 	if Input.get_connected_joypads().size() > 0:

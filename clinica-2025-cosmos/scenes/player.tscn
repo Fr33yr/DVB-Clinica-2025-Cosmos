@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dxy6bc066u671" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cvppx4rmrrcqu" path="res://assets/Sketches/personajes-demogorgon_0007_Capa-2.png" id="2_dqkch"]
-[ext_resource type="Script" uid="uid://q0iivc0ro1cv" path="res://scenes/muzzle.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://q0iivc0ro1cv" path="res://scripts/muzzle.gd" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
 radius = 40.0
 height = 180.0
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
