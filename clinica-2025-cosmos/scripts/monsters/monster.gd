@@ -7,7 +7,7 @@ class_name Monster
 
 @onready var hp_bar: HPBar = $HP_Bar
 
-var chase_speed: float = 500
+var chase_speed: float = 200
 
 @onready var patrol_path: Array[Marker2D]
 @onready var patrol_wait_time: float

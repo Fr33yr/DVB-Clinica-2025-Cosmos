@@ -22,74 +22,79 @@ texture = ExtResource("2_7sn1t")
 position = Vector2(675, 350)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+editor_draw_limits = true
 
 [node name="ProjectileContainer" type="Node" parent="."]
 
-[node name="MonsterAquatic" parent="." instance=ExtResource("5_7sn1t")]
+[node name="Monsters" type="Node" parent="."]
+
+[node name="MonsterAquatic" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(698, -439)
 
-[node name="MonsterAquatic2" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic2" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(920, -389)
 
-[node name="MonsterAquatic3" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic3" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1103, -280)
 
-[node name="MonsterAquatic4" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic4" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1287, -117)
 
-[node name="MonsterAquatic5" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic5" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1425, 67)
 
-[node name="MonsterAquatic6" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic6" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1471, 259)
 
-[node name="MonsterAquatic7" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic7" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1450, 522)
 
-[node name="MonsterAquatic8" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic8" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1366, 739)
 
-[node name="MonsterAquatic9" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic9" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1149, 927)
 
-[node name="MonsterAquatic10" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic10" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(978, 1048)
 
-[node name="MonsterAquatic11" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic11" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(790, 1136)
 
-[node name="MonsterAquatic12" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic12" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(610, 1107)
 
-[node name="MonsterAquatic13" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic13" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(422, 1082)
 
-[node name="MonsterAquatic14" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic14" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(301, 973)
 
-[node name="MonsterAquatic15" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic15" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(163, 814)
 
-[node name="MonsterAquatic16" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic16" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(55, 656)
 
-[node name="MonsterAquatic17" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic17" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(-20, 443)
 
-[node name="MonsterAquatic18" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic18" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(-83, 267)
 
-[node name="MonsterAquatic19" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic19" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(-50, 71)
 
-[node name="MonsterAquatic20" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic20" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(30, -113)
 
-[node name="MonsterAquatic21" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic21" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(138, -292)
 
-[node name="MonsterAquatic22" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic22" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(293, -397)
 
-[node name="MonsterAquatic23" parent="." instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic23" parent="Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(489, -455)

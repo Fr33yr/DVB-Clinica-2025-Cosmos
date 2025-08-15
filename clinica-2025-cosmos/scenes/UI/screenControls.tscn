@@ -28,6 +28,26 @@ texture = ExtResource("2_m41qk")
 [node name="Tip" parent="RightStick/Base" index="0"]
 texture = ExtResource("3_35jxk")
 
+[node name="Suffle_Anchor" type="Control" parent="RightStick"]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="RightStick/Suffle_Anchor"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+texture = ExtResource("2_m41qk")
+
+[node name="Shuffle" type="TouchScreenButton" parent="RightStick/Suffle_Anchor/TextureRect"]
+position = Vector2(40, 40)
+texture_normal = ExtResource("4_tpnoy")
+action = "shuffle"
+visibility_mode = 1
+
 [node name="LeftStick" parent="." instance=ExtResource("1_7e3k0")]
 offset_top = -300.0
 offset_bottom = 0.0
@@ -39,67 +59,20 @@ action_down = "move_down"
 [node name="Base" parent="LeftStick" index="0"]
 texture = ExtResource("2_m41qk")
 
-[node name="Suffle_Anchor" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -370.0
-offset_top = -350.0
-offset_right = -370.0
-offset_bottom = -350.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="TextureRect" type="TextureRect" parent="Suffle_Anchor"]
+[node name="PowerUp_Anchor" type="Control" parent="LeftStick"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="LeftStick/PowerUp_Anchor"]
+layout_mode = 1
 offset_right = 128.0
 offset_bottom = 128.0
-grow_horizontal = 2
-grow_vertical = 2
 texture = ExtResource("2_m41qk")
 
-[node name="Shuffle" type="TouchScreenButton" parent="Suffle_Anchor/TextureRect"]
-position = Vector2(40, 40)
-texture_normal = ExtResource("4_tpnoy")
-action = "shuffle"
-visibility_mode = 1
-
-[node name="PowerUp_Anchor" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1670.0
-offset_top = -350.0
-offset_right = -1670.0
-offset_bottom = -350.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="TextureRect" type="TextureRect" parent="PowerUp_Anchor"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 128.0
-offset_bottom = 128.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_m41qk")
-
-[node name="PowerUp" type="TouchScreenButton" parent="PowerUp_Anchor/TextureRect"]
+[node name="PowerUp" type="TouchScreenButton" parent="LeftStick/PowerUp_Anchor/TextureRect"]
 position = Vector2(40, 40)
 texture_normal = ExtResource("5_vb61p")
 action = "powerup"
