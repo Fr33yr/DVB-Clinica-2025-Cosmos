@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name GameLevel
+class_name LevelManager
 
 @onready var player = $Player
 @onready var projectile_container = $ProjectileContainer

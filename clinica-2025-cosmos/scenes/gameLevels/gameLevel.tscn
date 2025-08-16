@@ -6,95 +6,101 @@
 [ext_resource type="PackedScene" uid="uid://dmd2rv33dxeu2" path="res://scenes/player.tscn" id="4_j30t8"]
 [ext_resource type="PackedScene" uid="uid://c8h0l611mr476" path="res://scenes/monsters/monsterAquatic.tscn" id="5_7sn1t"]
 
-[node name="GameLevel" type="Node2D"]
+[node name="GameManager" type="Node"]
+
+[node name="GameLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="LevelManager" type="Node2D" parent="GameLayer"]
 script = ExtResource("1_croed")
 
-[node name="ScreenControls" parent="." instance=ExtResource("3_hu8pu")]
-
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="GameLayer/LevelManager"]
 show_behind_parent = true
 z_index = -5
 y_sort_enabled = true
 position = Vector2(677, 352)
 texture = ExtResource("2_7sn1t")
 
-[node name="Player" parent="." instance=ExtResource("4_j30t8")]
+[node name="Player" parent="GameLayer/LevelManager" instance=ExtResource("4_j30t8")]
 position = Vector2(675, 350)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="GameLayer/LevelManager/Player"]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 editor_draw_limits = true
 
-[node name="ProjectileContainer" type="Node" parent="."]
+[node name="ProjectileContainer" type="Node2D" parent="GameLayer/LevelManager"]
 
-[node name="Monsters" type="Node" parent="."]
+[node name="Monsters" type="Node2D" parent="GameLayer/LevelManager"]
 
-[node name="MonsterAquatic" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(698, -439)
 
-[node name="MonsterAquatic2" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic2" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(920, -389)
 
-[node name="MonsterAquatic3" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic3" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1103, -280)
 
-[node name="MonsterAquatic4" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic4" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1287, -117)
 
-[node name="MonsterAquatic5" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic5" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1425, 67)
 
-[node name="MonsterAquatic6" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic6" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1471, 259)
 
-[node name="MonsterAquatic7" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic7" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1450, 522)
 
-[node name="MonsterAquatic8" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic8" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1366, 739)
 
-[node name="MonsterAquatic9" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic9" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(1149, 927)
 
-[node name="MonsterAquatic10" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic10" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(978, 1048)
 
-[node name="MonsterAquatic11" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic11" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(790, 1136)
 
-[node name="MonsterAquatic12" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic12" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(610, 1107)
 
-[node name="MonsterAquatic13" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic13" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(422, 1082)
 
-[node name="MonsterAquatic14" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic14" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(301, 973)
 
-[node name="MonsterAquatic15" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic15" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(163, 814)
 
-[node name="MonsterAquatic16" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic16" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(55, 656)
 
-[node name="MonsterAquatic17" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic17" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(-20, 443)
 
-[node name="MonsterAquatic18" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic18" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(-83, 267)
 
-[node name="MonsterAquatic19" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic19" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(-50, 71)
 
-[node name="MonsterAquatic20" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic20" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(30, -113)
 
-[node name="MonsterAquatic21" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic21" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(138, -292)
 
-[node name="MonsterAquatic22" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic22" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(293, -397)
 
-[node name="MonsterAquatic23" parent="Monsters" instance=ExtResource("5_7sn1t")]
+[node name="MonsterAquatic23" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
 position = Vector2(489, -455)
+
+[node name="ScreenControls" parent="." instance=ExtResource("3_hu8pu")]
+layer = 5
