@@ -15,6 +15,10 @@ run/main_scene="uid://cxv03xw8xs4eb"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerPowerUps="*res://scripts/globals/player_power_ups.gd"
+
 [display]
 
 window/size/viewport_width=2560
