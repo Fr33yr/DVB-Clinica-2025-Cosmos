@@ -74,8 +74,8 @@ func aiming_input():
 		aim_direction = direction.normalized()
 
 func buttons_input():
-	if Input.is_action_just_pressed("shuffle"):
-		print("Shuffle!")
+	if Input.is_action_just_pressed("swap"):
+		print("Swap!")
 		
 	if Input.is_action_just_pressed("powerup"):
 		print("POWERUP!")
