@@ -4,9 +4,10 @@ class_name Projectile
 
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D 
 
-@export var speed: float
-@export var direction: Vector2
-@export var damage: int
+@onready var speed: float
+@onready var direction: Vector2
+@onready var damage: int
+@onready var rotationSpeed = 25.0
 
 var velocity: Vector2
 
@@ -16,6 +17,7 @@ func _ready():
 func _physics_process(delta):
 	velocity = direction.normalized() * speed
 	position += velocity * delta
+	rotation += rotationSpeed * delta
 	
 func _on_screen_exited():
 	destroy_projectile()

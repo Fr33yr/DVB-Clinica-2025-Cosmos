@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5miaeshocwmn"]
+
+[ext_resource type="Script" uid="uid://bo6nj10is5ldg" path="res://scripts/monsters/monsterCthul.gd" id="1_sc77l"]
+[ext_resource type="Texture2D" uid="uid://sqb7ef2gtl76" path="res://assets/Sketches/personajes-demogorgon_0002_mamut.png" id="2_2wcd2"]
+[ext_resource type="PackedScene" uid="uid://tv8hlohyhaex" path="res://scenes/commons/hp_system.tscn" id="3_31j4w"]
+[ext_resource type="PackedScene" uid="uid://50khjaacijk3" path="res://scenes/UI/hp_bar.tscn" id="4_fb1ex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f5cs6"]
+radius = 2025.8
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxmyf"]
+radius = 58.0
+height = 208.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ad3ak"]
+radius = 114.0
+height = 348.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wiubh"]
+radius = 112.0
+height = 348.0
+
+[node name="monsterCthul" type="CharacterBody2D"]
+y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_sc77l")
+
+[node name="Detector_Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector_Area2D"]
+shape = SubResource("CircleShape2D_f5cs6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, -2.38419e-07)
+texture = ExtResource("2_2wcd2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_cxmyf")
+
+[node name="Monitoring_Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monitoring_Area2D"]
+shape = SubResource("CapsuleShape2D_ad3ak")
+
+[node name="Monitorable_Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monitorable_Area2D"]
+shape = SubResource("CapsuleShape2D_wiubh")
+
+[node name="HP_System" parent="." instance=ExtResource("3_31j4w")]
+
+[node name="HP_Bar" parent="." instance=ExtResource("4_fb1ex")]
+
+[node name="ShootingTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="area_entered" from="Detector_Area2D" to="." method="_on_detector_area_2d_area_entered"]
+[connection signal="area_exited" from="Detector_Area2D" to="." method="_on_detector_area_2d_area_exited"]
+[connection signal="area_entered" from="Monitoring_Area2D" to="." method="_on_monitoring_area_2d_area_entered"]
+[connection signal="timeout" from="ShootingTimer" to="." method="_on_shooting_timer_timeout"]
