@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Entity
 
-@onready var monster = $"."
+@onready var entity = $"."
 @onready var sprite_2d = $Sprite2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var monitoring_area_2d = $Monitoring_Area2D

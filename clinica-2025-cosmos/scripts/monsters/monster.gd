@@ -74,6 +74,7 @@ func chase_player(delta: float):
 
 # Disables all functions. Called from signal.
 func on_Died():
+	manage_drops()
 	hp_bar.visible = false
 	detector_area_2d.monitoring = false
 	super()
@@ -95,3 +96,15 @@ func _on_detector_area_2d_area_exited(area):
 	var areaParent = area.get_parent()
 	if areaParent is Player:
 		chasing = false
+
+func manage_drops():
+	var numero = randi_range(1,10)
+	var drop: StaticBody2D
+	
+	if numero <= 1:
+		drop = preload("res://scenes/drops/drop_strong_card.tscn").instantiate()
+		
+	if drop != null:
+		drop.global_position = entity.global_position
+		var container: Node = entity.get_parent()
+		container.add_child(drop,false,Node.INTERNAL_MODE_DISABLED)

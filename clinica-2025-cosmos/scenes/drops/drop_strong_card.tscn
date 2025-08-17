@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://lkq6evmuqfex"]
+
+[ext_resource type="Script" uid="uid://gu15kxwbag4i" path="res://scripts/drops/drop_strong_card.gd" id="1_f2aj4"]
+[ext_resource type="Texture2D" uid="uid://h6xsbh54oflv" path="res://assets/Sketches/cartas bullet.png" id="2_5jqla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2aj4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_630aa"]
+size = Vector2(62, 97)
+
+[node name="Drop_StrongCard" type="StaticBody2D"]
+script = ExtResource("1_f2aj4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.999997, 0.0909568, 0.0594723, 1)
+texture = ExtResource("2_5jqla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f2aj4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, -1.5)
+shape = SubResource("RectangleShape2D_630aa")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

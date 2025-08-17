@@ -10,6 +10,7 @@ signal projectile_shot
 var friction : float = 1000
 
 var stronger_fire_mode: bool = false
+var stronger_fire_duration: float = 10.0
 var rapid_fire_mode: bool = false
 var rapid_fire_duration: float = 10.0
 
@@ -97,10 +98,11 @@ func manage_shooting():
 func shoot():
 	if aim_direction == Vector2.ZERO: 
 		pass
-	var projectile = preload("res://scenes/projectiles/playerBaseCard.tscn")
 	if stronger_fire_mode == true:
+		var projectile = preload("res://scenes/projectiles/playerStrongCard.tscn")
 		projectile_shot.emit(projectile, muzzle.global_position)
 	else:
+		var projectile = preload("res://scenes/projectiles/playerBaseCard.tscn")
 		projectile_shot.emit(projectile, muzzle.global_position)
 
 func manage_animation():
