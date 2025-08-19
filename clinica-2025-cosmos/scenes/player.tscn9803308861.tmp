@@ -47,10 +47,4 @@ autostart = true
 
 [node name="HP_System" parent="." instance=ExtResource("4_dqkch")]
 
-[node name="PowerUpsContainer" type="Node" parent="."]
-
-[node name="CurrentPowerUp" type="Node" parent="PowerUpsContainer"]
-
-[node name="OtherPowerUp" type="Node" parent="PowerUpsContainer"]
-
 [connection signal="area_entered" from="Monitorable_Area2D" to="." method="_on_monitorable_area_2d_area_entered"]

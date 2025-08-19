@@ -6,6 +6,8 @@ signal projectile_shot
 
 @onready var muzzle = $Muzzle
 @onready var shooting_timer = $ShootingTimer
+@onready var current_power_up = $PowerUpsContainer/CurrentPowerUp
+@onready var other_power_up = $PowerUpsContainer/OtherPowerUp
 
 var friction : float = 1000
 
@@ -24,6 +26,8 @@ var joystick_connected = false
 
 # Initializes the HPSystem.
 func _ready() -> void:
+	PlayerPowerUps.current_power_up_container = current_power_up
+	PlayerPowerUps.other_power_up_container = other_power_up
 	check_connected_joypad()
 	move_speed = 750
 	hp_max = 3
@@ -74,12 +78,7 @@ func aiming_input():
 		aim_direction = direction.normalized()
 
 func buttons_input():
-	if Input.is_action_just_pressed("swap"):
-		print("Swap!")
-		
-	if Input.is_action_just_pressed("powerup"):
-		print("POWERUP!")
-
+	pass
 # Manages shooting time delay.
 func manage_shooting():
 	var firing: bool

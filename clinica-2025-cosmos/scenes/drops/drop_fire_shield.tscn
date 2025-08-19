@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwp4ijodtm2co"]
+
+[ext_resource type="Script" uid="uid://5dl3o3ybaaw8" path="res://scripts/drops/drop_fire_shield.gd" id="1_b7avf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7avf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6epi"]
+
+[node name="DropFireShield" type="StaticBody2D"]
+script = ExtResource("1_b7avf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b7avf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_i6epi")
