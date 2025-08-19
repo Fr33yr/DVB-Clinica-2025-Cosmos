@@ -101,8 +101,10 @@ func manage_drops():
 	var numero = randi_range(1,10)
 	var drop: StaticBody2D
 	
-	if numero <= 1:
+	if numero == 1:
 		drop = preload("res://scenes/drops/drop_strong_card.tscn").instantiate()
+	if numero == 2:
+		drop = preload("res://scenes/drops/drop_fire_shield.tscn").instantiate()
 		
 	if drop != null:
 		drop.global_position = entity.global_position

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b601irxkighpb"]
+
+[ext_resource type="Script" uid="uid://cfoy8c08kmpxg" path="res://scripts/powerUps/power_up_fire_shield.gd" id="1_vch3k"]
+
+[node name="PowerUpFireShield" type="Node"]
+script = ExtResource("1_vch3k")

@@ -21,6 +21,7 @@ shape = SubResource("RectangleShape2D_f2aj4")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+texture_filter = 1
 position = Vector2(4, -1.5)
 shape = SubResource("RectangleShape2D_630aa")
 
