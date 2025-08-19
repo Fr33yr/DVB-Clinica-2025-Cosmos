@@ -1,9 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmd2rv33dxeu2"]
+[gd_scene load_steps=8 format=3 uid="uid://dmd2rv33dxeu2"]
 
 [ext_resource type="Script" uid="uid://dxy6bc066u671" path="res://scripts/player/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cvppx4rmrrcqu" path="res://assets/Sketches/personajes-demogorgon_0007_Capa-2.png" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://q0iivc0ro1cv" path="res://scripts/player/muzzle.gd" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://tv8hlohyhaex" path="res://scenes/commons/hp_system.tscn" id="4_dqkch"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dqkch")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
 radius = 40.0
@@ -18,9 +29,11 @@ y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.38419e-07, -2.38419e-07)
-texture = ExtResource("2_dqkch")
+sprite_frames = SubResource("SpriteFrames_dqkch")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qlg0r")

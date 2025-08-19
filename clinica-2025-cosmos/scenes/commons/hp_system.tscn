@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://tv8hlohyhaex"]
 
-[ext_resource type="Script" uid="uid://t0nqhumqoc12" path="res://scenes/hp_system.gd" id="1_7kevc"]
+[ext_resource type="Script" uid="uid://t0nqhumqoc12" path="res://scripts/hp_system.gd" id="1_7kevc"]
 
 [node name="HP_System" type="Node"]
 script = ExtResource("1_7kevc")

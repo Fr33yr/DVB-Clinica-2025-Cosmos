@@ -1,24 +1,170 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5miaeshocwmn"]
+[gd_scene load_steps=40 format=3 uid="uid://b5miaeshocwmn"]
 
 [ext_resource type="Script" uid="uid://bo6nj10is5ldg" path="res://scripts/monsters/monsterCthul.gd" id="1_sc77l"]
-[ext_resource type="Texture2D" uid="uid://sqb7ef2gtl76" path="res://assets/Sketches/personajes-demogorgon_0002_mamut.png" id="2_2wcd2"]
+[ext_resource type="Texture2D" uid="uid://bn47sfaih3sgs" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0000_demon-eye-ataque_00.png.png" id="2_4cfns"]
+[ext_resource type="Texture2D" uid="uid://ctuchk5orwiag" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0001_demon-eye-ataque_01.png.png" id="3_7s5lm"]
 [ext_resource type="PackedScene" uid="uid://tv8hlohyhaex" path="res://scenes/commons/hp_system.tscn" id="3_31j4w"]
 [ext_resource type="PackedScene" uid="uid://50khjaacijk3" path="res://scenes/UI/hp_bar.tscn" id="4_fb1ex"]
+[ext_resource type="Texture2D" uid="uid://odc4opv31em0" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0002_demon-eye-ataque_02.png.png" id="4_q3wvj"]
+[ext_resource type="Texture2D" uid="uid://dvan4fimib1d3" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0003_demon-eye-ataque_03.png.png" id="5_vr0uh"]
+[ext_resource type="Texture2D" uid="uid://dcwnb1440ap2r" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0004_demon-eye-ataque_04.png.png" id="6_5vlf6"]
+[ext_resource type="Texture2D" uid="uid://d0xitxg62xclx" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0005_demon-eye-ataque_05.png.png" id="7_xer7t"]
+[ext_resource type="Texture2D" uid="uid://csfpl5gpehqy0" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0006_demon-eye-ataque_06.png.png" id="8_lfqgn"]
+[ext_resource type="Texture2D" uid="uid://bmp7rujytoxi6" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0007_demon-eye-ataque_07.png.png" id="9_0pihm"]
+[ext_resource type="Texture2D" uid="uid://u5lcuxi344pj" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0008_demon-eye-ataque_08.png.png" id="10_qrq6b"]
+[ext_resource type="Texture2D" uid="uid://bi3y7tjsmrnh2" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0009_demon-eye-ataque_09.png.png" id="11_gg8lv"]
+[ext_resource type="Texture2D" uid="uid://bt7opfidayyvp" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0010_demon-eye-ataque_10.png.png" id="12_wtam0"]
+[ext_resource type="Texture2D" uid="uid://tggt74jltyyj" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0011_demon-eye-ataque_11.png.png" id="13_3ds1c"]
+[ext_resource type="Texture2D" uid="uid://dnesdh7xuid8n" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0012_demon-eye-ataque_12.png.png" id="14_1eosy"]
+[ext_resource type="Texture2D" uid="uid://dxixjgyajfyde" path="res://assets/Monsters/DemonEye/ataque/demon-eye-ataque_0013_demon-eye-ataque_13.png.png" id="15_vnj0x"]
+[ext_resource type="Texture2D" uid="uid://cjud6e8fk1msl" path="res://assets/Monsters/DemonEye/muerte/demon-eye-muerte_0000_demon-eye-muerte_0.png.png" id="16_qp7cc"]
+[ext_resource type="Texture2D" uid="uid://btkshquvd6yny" path="res://assets/Monsters/DemonEye/muerte/demon-eye-muerte_0001_demon-eye-muerte_1.png.png" id="17_wfbre"]
+[ext_resource type="Texture2D" uid="uid://cpvxlf10gyfgj" path="res://assets/Monsters/DemonEye/muerte/demon-eye-muerte_0002_demon-eye-muerte_2.png.png" id="18_6bc2g"]
+[ext_resource type="Texture2D" uid="uid://c3su1bikkfkhr" path="res://assets/Monsters/DemonEye/muerte/demon-eye-muerte_0003_demon-eye-muerte_3.png.png" id="19_cgp6e"]
+[ext_resource type="Texture2D" uid="uid://ds334c4frkvea" path="res://assets/Monsters/DemonEye/muerte/demon-eye-muerte_0004_demon-eye-muerte_4.png.png" id="20_duy78"]
+[ext_resource type="Texture2D" uid="uid://cgn036ffi7xbi" path="res://assets/Monsters/DemonEye/muerte/demon-eye-muerte_0005_demon-eye-muerte_5.png.png" id="21_gffdg"]
+[ext_resource type="Texture2D" uid="uid://crtybgl36utlm" path="res://assets/Monsters/DemonEye/quieto/skeleton-quieto_0.png" id="22_8lqkn"]
+[ext_resource type="Texture2D" uid="uid://dqauq37pov4p4" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0000_skeleton-caminando-pulpo_00.png.png" id="23_obp11"]
+[ext_resource type="Texture2D" uid="uid://y0mav02glclo" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0001_skeleton-caminando-pulpo_01.png.png" id="24_aq6qs"]
+[ext_resource type="Texture2D" uid="uid://bex3248dxv2ix" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0002_skeleton-caminando-pulpo_02.png.png" id="25_rauef"]
+[ext_resource type="Texture2D" uid="uid://q2h1a8sm6v0n" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0003_skeleton-caminando-pulpo_03.png.png" id="26_fbgiw"]
+[ext_resource type="Texture2D" uid="uid://hi6u5jj3pe8q" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0004_skeleton-caminando-pulpo_04.png.png" id="27_pmubw"]
+[ext_resource type="Texture2D" uid="uid://b6v0rs6uo2cbr" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0005_skeleton-caminando-pulpo_05.png.png" id="28_cq8ei"]
+[ext_resource type="Texture2D" uid="uid://b1uf1b3uxpej4" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0006_skeleton-caminando-pulpo_06.png.png" id="29_j3el3"]
+[ext_resource type="Texture2D" uid="uid://dfrk5ewmihpx5" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0007_skeleton-caminando-pulpo_07.png.png" id="30_kxid4"]
+[ext_resource type="Texture2D" uid="uid://dggm27p0jjhd" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0008_skeleton-caminando-pulpo_08.png.png" id="31_3bu75"]
+[ext_resource type="Texture2D" uid="uid://drx0h6w48dsh3" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0009_skeleton-caminando-pulpo_09.png.png" id="32_xt7l2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f5cs6"]
 radius = 2025.8
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxmyf"]
-radius = 58.0
-height = 208.0
+radius = 24.0
+height = 60.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ad3ak"]
-radius = 114.0
-height = 348.0
+radius = 58.0
+height = 148.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wiubh"]
-radius = 112.0
-height = 348.0
+radius = 58.0
+height = 152.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mumi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4cfns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7s5lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q3wvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vr0uh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5vlf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xer7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lfqgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0pihm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qrq6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gg8lv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wtam0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3ds1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1eosy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vnj0x")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_qp7cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wfbre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6bc2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cgp6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_duy78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gffdg")
+}],
+"loop": false,
+"name": &"Dead",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_8lqkn")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_obp11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_aq6qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rauef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_fbgiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_pmubw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_cq8ei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_j3el3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_kxid4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_3bu75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_xt7l2")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 16.0
+}]
 
 [node name="monsterCthul" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -31,10 +177,6 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector_Area2D"]
 shape = SubResource("CircleShape2D_f5cs6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.38419e-07, -2.38419e-07)
-texture = ExtResource("2_2wcd2")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_cxmyf")
 
@@ -42,13 +184,22 @@ shape = SubResource("CapsuleShape2D_cxmyf")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Monitoring_Area2D"]
+position = Vector2(0, -28)
 shape = SubResource("CapsuleShape2D_ad3ak")
 
 [node name="Monitorable_Area2D" type="Area2D" parent="."]
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Monitorable_Area2D"]
+position = Vector2(0, -30)
 shape = SubResource("CapsuleShape2D_wiubh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.38419e-07, -2.38419e-07)
+sprite_frames = SubResource("SpriteFrames_7mumi")
+animation = &"Move"
+autoplay = "Idle"
+frame_progress = 0.950226
 
 [node name="HP_System" parent="." instance=ExtResource("3_31j4w")]
 

@@ -1,9 +1,47 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8h0l611mr476"]
+[gd_scene load_steps=47 format=3 uid="uid://c8h0l611mr476"]
 
 [ext_resource type="Script" uid="uid://bkhquub1c1yle" path="res://scripts/monsters/monsterAquatic.gd" id="1_i73a5"]
-[ext_resource type="Texture2D" uid="uid://bh2rtfjsdh2v2" path="res://assets/Sketches/personajes-demogorgon_0003_dagon-copia-2.png" id="2_lcqqe"]
+[ext_resource type="Texture2D" uid="uid://crfaa6acah86w" path="res://assets/Monsters/DemonPez/ataque/atack_0000_ataque_00.png.png" id="2_cfwg5"]
+[ext_resource type="Texture2D" uid="uid://b3huiylyqhubk" path="res://assets/Monsters/DemonPez/ataque/atack_0001_ataque_01.png.png" id="3_0gtnx"]
 [ext_resource type="PackedScene" uid="uid://tv8hlohyhaex" path="res://scenes/commons/hp_system.tscn" id="3_tla12"]
+[ext_resource type="Texture2D" uid="uid://d2qgcn8a7nmqt" path="res://assets/Monsters/DemonPez/ataque/atack_0002_ataque_02.png.png" id="4_0rh2t"]
 [ext_resource type="PackedScene" uid="uid://50khjaacijk3" path="res://scenes/UI/hp_bar.tscn" id="4_w5nxb"]
+[ext_resource type="Texture2D" uid="uid://cu515xaxdo50r" path="res://assets/Monsters/DemonPez/ataque/atack_0003_ataque_03.png.png" id="5_ohdj0"]
+[ext_resource type="Texture2D" uid="uid://bxdt3m5sihpfr" path="res://assets/Monsters/DemonPez/ataque/atack_0004_ataque_04.png.png" id="6_850s7"]
+[ext_resource type="Texture2D" uid="uid://sor1key8th0p" path="res://assets/Monsters/DemonPez/ataque/atack_0005_ataque_05.png.png" id="7_aiwso"]
+[ext_resource type="Texture2D" uid="uid://c5xnam0mufde0" path="res://assets/Monsters/DemonPez/ataque/atack_0006_ataque_06.png.png" id="8_mmqth"]
+[ext_resource type="Texture2D" uid="uid://eros7wsa0rdm" path="res://assets/Monsters/DemonPez/ataque/atack_0007_ataque_07.png.png" id="9_i48ca"]
+[ext_resource type="Texture2D" uid="uid://bwlas33a0py48" path="res://assets/Monsters/DemonPez/ataque/atack_0008_ataque_08.png.png" id="10_g80ma"]
+[ext_resource type="Texture2D" uid="uid://dus2kfqw25f0n" path="res://assets/Monsters/DemonPez/ataque/atack_0009_ataque_09.png.png" id="11_3gvm5"]
+[ext_resource type="Texture2D" uid="uid://dgmen1l1q1s31" path="res://assets/Monsters/DemonPez/ataque/atack_0010_ataque_10.png.png" id="12_pvubm"]
+[ext_resource type="Texture2D" uid="uid://2mhx3dbmwf05" path="res://assets/Monsters/DemonPez/ataque/atack_0011_ataque_11.png.png" id="13_hs7pr"]
+[ext_resource type="Texture2D" uid="uid://djp1vhaoggpn0" path="res://assets/Monsters/DemonPez/ataque/atack_0012_ataque_12.png.png" id="14_yn2al"]
+[ext_resource type="Texture2D" uid="uid://dcwgersabuk3d" path="res://assets/Monsters/DemonPez/muerte/muerte1_0000_muerte_00.png.png" id="15_blvmh"]
+[ext_resource type="Texture2D" uid="uid://ddyimf8rn5ony" path="res://assets/Monsters/DemonPez/muerte/muerte1_0001_muerte_01.png.png" id="16_3piwu"]
+[ext_resource type="Texture2D" uid="uid://cobn0ib542vo0" path="res://assets/Monsters/DemonPez/muerte/muerte1_0002_muerte_02.png.png" id="17_lx5qt"]
+[ext_resource type="Texture2D" uid="uid://c00irnuptd1gf" path="res://assets/Monsters/DemonPez/muerte/muerte1_0003_muerte_03.png.png" id="18_vvpgh"]
+[ext_resource type="Texture2D" uid="uid://o2xyoyvjp2il" path="res://assets/Monsters/DemonPez/muerte/muerte1_0004_muerte_04.png.png" id="19_3b32k"]
+[ext_resource type="Texture2D" uid="uid://cqdd7e1ssl7e5" path="res://assets/Monsters/DemonPez/muerte/muerte1_0005_muerte_05.png.png" id="20_ul4cc"]
+[ext_resource type="Texture2D" uid="uid://cj4aggvbf40vt" path="res://assets/Monsters/DemonPez/muerte/muerte1_0006_muerte_06.png.png" id="21_how5q"]
+[ext_resource type="Texture2D" uid="uid://dfv87owika6hp" path="res://assets/Monsters/DemonPez/muerte/muerte1_0007_muerte_07.png.png" id="22_673xk"]
+[ext_resource type="Texture2D" uid="uid://dwxopo20chh3s" path="res://assets/Monsters/DemonPez/muerte/muerte1_0008_muerte_08.png.png" id="23_ypn8m"]
+[ext_resource type="Texture2D" uid="uid://cdrtgm5sd7ji4" path="res://assets/Monsters/DemonPez/muerte/muerte1_0009_muerte_09.png.png" id="24_wha2p"]
+[ext_resource type="Texture2D" uid="uid://cdoogq0eetpbl" path="res://assets/Monsters/DemonPez/muerte/muerte1_0010_muerte_10.png.png" id="25_rn1yg"]
+[ext_resource type="Texture2D" uid="uid://nsgdg33wny77" path="res://assets/Monsters/DemonPez/quieto/quieto_0.png" id="26_gior2"]
+[ext_resource type="Texture2D" uid="uid://2h8sq2n0qkuy" path="res://assets/Monsters/DemonPez/caminar/caminar1_0000_caminar_00.png.png" id="27_l3vpm"]
+[ext_resource type="Texture2D" uid="uid://be2mj5vo4tpnh" path="res://assets/Monsters/DemonPez/caminar/caminar1_0001_caminar_01.png.png" id="28_s65d2"]
+[ext_resource type="Texture2D" uid="uid://cr6hio2r03set" path="res://assets/Monsters/DemonPez/caminar/caminar1_0002_caminar_02.png.png" id="29_tmdmx"]
+[ext_resource type="Texture2D" uid="uid://c5b6mx7xwrcad" path="res://assets/Monsters/DemonPez/caminar/caminar1_0003_caminar_03.png.png" id="30_8awkd"]
+[ext_resource type="Texture2D" uid="uid://c5qmvgflkh38" path="res://assets/Monsters/DemonPez/caminar/caminar1_0004_caminar_04.png.png" id="31_2bvlo"]
+[ext_resource type="Texture2D" uid="uid://dtvqm4woa5h3y" path="res://assets/Monsters/DemonPez/caminar/caminar1_0005_caminar_05.png.png" id="32_3evll"]
+[ext_resource type="Texture2D" uid="uid://vn2a0wuo8owr" path="res://assets/Monsters/DemonPez/caminar/caminar1_0006_caminar_06.png.png" id="33_216cv"]
+[ext_resource type="Texture2D" uid="uid://dp4i7ttvrf82m" path="res://assets/Monsters/DemonPez/caminar/caminar1_0007_caminar_07.png.png" id="34_i10v0"]
+[ext_resource type="Texture2D" uid="uid://crkw101rn3wyt" path="res://assets/Monsters/DemonPez/caminar/caminar1_0008_caminar_08.png.png" id="35_viwb6"]
+[ext_resource type="Texture2D" uid="uid://vnpo4xci111l" path="res://assets/Monsters/DemonPez/caminar/caminar1_0009_caminar_09.png.png" id="36_sier6"]
+[ext_resource type="Texture2D" uid="uid://cp6cy27yjovr5" path="res://assets/Monsters/DemonPez/caminar/caminar1_0010_caminar_10.png.png" id="37_0cnmi"]
+[ext_resource type="Texture2D" uid="uid://cqovyw4ls57e1" path="res://assets/Monsters/DemonPez/caminar/caminar1_0011_caminar_11.png.png" id="38_kuc5u"]
+[ext_resource type="Texture2D" uid="uid://t4ex7u7x6t03" path="res://assets/Monsters/DemonPez/caminar/caminar1_0012_caminar_12.png.png" id="39_bf1ff"]
+[ext_resource type="Texture2D" uid="uid://niowg4i6lntj" path="res://assets/Monsters/DemonPez/caminar/caminar1_0013_caminar_13.png.png" id="40_tfwum"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w5nxb"]
 radius = 1720.0
@@ -16,6 +54,146 @@ height = 192.0
 radius = 66.0
 height = 276.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5sc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cfwg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0gtnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0rh2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ohdj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_850s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aiwso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mmqth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i48ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g80ma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3gvm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pvubm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hs7pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yn2al")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_blvmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3piwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lx5qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vvpgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3b32k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ul4cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_how5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_673xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ypn8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_wha2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rn1yg")
+}],
+"loop": false,
+"name": &"Dead",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_gior2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_l3vpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_s65d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tmdmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_8awkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_2bvlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_3evll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_216cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_i10v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_viwb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_sier6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0cnmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_kuc5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_bf1ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_tfwum")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 24.0
+}]
+
 [node name="MonsterAquatic" type="CharacterBody2D"]
 y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
@@ -27,10 +205,6 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector_Area2D"]
 shape = SubResource("CircleShape2D_w5nxb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.38419e-07, -2.38419e-07)
-texture = ExtResource("2_lcqqe")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_tfl2c")
 
@@ -38,17 +212,27 @@ shape = SubResource("CapsuleShape2D_tfl2c")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Monitoring_Area2D"]
+position = Vector2(0, -58)
 shape = SubResource("CapsuleShape2D_tla12")
 
 [node name="Monitorable_Area2D" type="Area2D" parent="."]
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Monitorable_Area2D"]
+position = Vector2(0, -58)
 shape = SubResource("CapsuleShape2D_tla12")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.38419e-07, -2.38419e-07)
+sprite_frames = SubResource("SpriteFrames_o5sc4")
+animation = &"Attack"
+autoplay = "Idle"
 
 [node name="HP_System" parent="." instance=ExtResource("3_tla12")]
 
 [node name="HP_Bar" parent="." instance=ExtResource("4_w5nxb")]
+offset_top = -310.0
+offset_bottom = -280.0
 
 [connection signal="area_entered" from="Detector_Area2D" to="." method="_on_detector_area_2d_area_entered"]
 [connection signal="area_exited" from="Detector_Area2D" to="." method="_on_detector_area_2d_area_exited"]

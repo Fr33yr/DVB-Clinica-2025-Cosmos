@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Entity
 
 @onready var entity = $"."
-@onready var sprite_2d = $Sprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var monitoring_area_2d = $Monitoring_Area2D
 @onready var monitoring_collision_shape_2d = $Monitoring_Area2D/CollisionShape2D
@@ -34,7 +34,7 @@ func on_Died():
 	collision_shape_2d.disabled = true
 	monitorable_area_2d.monitoring = false
 	monitoring_area_2d.monitorable = false
-	sprite_2d.visible = false
+	animated_sprite_2d.visible = false
 	monitorable_collision_shape_2d.set_deferred("disabled",true)
 	monitoring_collision_shape_2d.set_deferred("disabled",true)
 	queue_free()
