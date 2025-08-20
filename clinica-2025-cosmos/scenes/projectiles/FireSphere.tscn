@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://8brmmxcqpftv"]
+
+[ext_resource type="Texture2D" uid="uid://dawdqsyc7km3i" path="res://assets/Icons/fireball.png" id="1_uuw78"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jv7pr"]
+radius = 22.0
+
+[node name="FireSphere" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_uuw78")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.8, 1.8)
+shape = SubResource("CircleShape2D_jv7pr")

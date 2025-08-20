@@ -4,3 +4,4 @@
 
 [node name="PowerUpFireShield" type="Node"]
 script = ExtResource("1_vch3k")
+buff_duration = 5.0
