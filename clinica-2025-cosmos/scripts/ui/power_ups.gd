@@ -10,7 +10,6 @@ func _ready():
 	PlayerPowerUps.connect("powerup_change", _on_power_up_change)
 
 func _on_power_up_change(power_ups: Dictionary):
-	print("power_ups in UI ", power_ups)
 	
 	var current_has_res = power_ups["current"].has("drop_sprite_path")
 	var other_has_res = power_ups["other"].has("drop_sprite_path")

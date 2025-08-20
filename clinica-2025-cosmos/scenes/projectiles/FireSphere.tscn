@@ -1,19 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://8brmmxcqpftv"]
+[gd_scene load_steps=4 format=3 uid="uid://8brmmxcqpftv"]
 
 [ext_resource type="Texture2D" uid="uid://dawdqsyc7km3i" path="res://assets/Icons/fireball.png" id="1_uuw78"]
+[ext_resource type="Script" uid="uid://cq0ec0qpsi7aq" path="res://scripts/projectiles/fire_sphere.gd" id="1_wyyrf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jv7pr"]
-radius = 22.0
+radius = 33.9071
 
-[node name="FireSphere" type="Node2D"]
+[node name="FireSphere" type="Area2D"]
+y_sort_enabled = true
+script = ExtResource("1_wyyrf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("1_uuw78")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.8, 1.8)
 shape = SubResource("CircleShape2D_jv7pr")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

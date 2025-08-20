@@ -83,6 +83,9 @@ func _on_monitoring_area_2d_area_entered(area):
 	if area is PlayerBaseCard:
 		var damage_recieved = area.damage
 		hp_system.apply_damage(damage_recieved)
+	elif area is PlayerFireShpere:
+		var damage_recieved = (area as PlayerFireShpere).damage
+		hp_system.apply_damage(damage_recieved)
 
 
 func _on_detector_area_2d_area_entered(area):
