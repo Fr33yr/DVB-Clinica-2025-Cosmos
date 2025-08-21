@@ -1,9 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://7faw63sksjrd"]
+[gd_scene load_steps=8 format=3 uid="uid://7faw63sksjrd"]
 
 [ext_resource type="Script" uid="uid://bhb0sy3hh0l7n" path="res://scripts/projectiles/player_strong_card.gd" id="1_05cdm"]
+[ext_resource type="Texture2D" uid="uid://dwckv7xom32nd" path="res://assets/Bullet Card/bullet_0000_Capa-4.png" id="2_gkukr"]
+[ext_resource type="Texture2D" uid="uid://bclp01mu7iqsv" path="res://assets/Bullet Card/bullet_0001_Capa-3.png" id="3_a2ce7"]
+[ext_resource type="Texture2D" uid="uid://bia86xed2hxox" path="res://assets/Bullet Card/bullet_0002_Capa-2.png" id="4_oqtg1"]
+[ext_resource type="Texture2D" uid="uid://cja2if4jh325s" path="res://assets/Bullet Card/bullet_0003_Capa-1.png" id="5_sg40t"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tveqc"]
-load_path = "res://.godot/imported/cartas bullet.png-6736318653d81dcf62160993bb5cd864.ctex"
+[sub_resource type="SpriteFrames" id="SpriteFrames_8e6dd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gkukr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a2ce7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oqtg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sg40t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfs3n"]
 size = Vector2(82.9999, 52.0003)
@@ -14,10 +35,10 @@ y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_05cdm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.0901961, 0.0588235, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.288013, 0.218615, 1)
 texture_filter = 1
-texture = SubResource("CompressedTexture2D_tveqc")
+sprite_frames = SubResource("SpriteFrames_8e6dd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -0.500044)

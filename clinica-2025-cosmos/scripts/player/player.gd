@@ -97,12 +97,14 @@ func manage_shooting():
 func shoot():
 	if aim_direction == Vector2.ZERO: 
 		pass
+	var projectile
 	if stronger_fire_mode == true:
-		var projectile = preload("res://scenes/projectiles/playerStrongCard.tscn")
-		projectile_shot.emit(projectile, muzzle.global_position)
+		projectile = preload("res://scenes/projectiles/playerStrongCard.tscn")
 	else:
-		var projectile = preload("res://scenes/projectiles/playerBaseCard.tscn")
-		projectile_shot.emit(projectile, muzzle.global_position)
+		projectile = preload("res://scenes/projectiles/playerBaseCard.tscn")
+	var aim_angle = muzzle.rotation + deg_to_rad(90)
+	var muzzle_position = muzzle.global_position
+	projectile_shot.emit(projectile, muzzle_position, aim_angle)
 
 func manage_animation():
 	pass
