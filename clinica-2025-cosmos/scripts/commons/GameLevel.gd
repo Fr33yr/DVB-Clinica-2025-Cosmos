@@ -6,9 +6,10 @@ class_name LevelManager
 @onready var projectile_container = $ProjectileContainer
 
 func _ready():
-	player.projectile_shot.connect(_on_player_bubble_shot) 
+	player.projectile_shot.connect(_on_player_shot) 
 
-func _on_player_bubble_shot(bubble_scene, location):
-	var bubble = bubble_scene.instantiate()
-	bubble.global_position = location
-	projectile_container.add_child(bubble)
+func _on_player_shot(projectile_scene, muzzle_position: Vector2, aim_angle: float):
+	var projectile: Projectile = projectile_scene.instantiate()
+	projectile.global_position = muzzle_position
+	projectile.rotation = aim_angle
+	projectile_container.add_child(projectile)
