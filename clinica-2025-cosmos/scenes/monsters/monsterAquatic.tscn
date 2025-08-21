@@ -44,7 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://niowg4i6lntj" path="res://assets/Monsters/DemonPez/caminar/caminar1_0013_caminar_13.png.png" id="40_tfwum"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w5nxb"]
-radius = 1720.0
+radius = 2136.11
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tfl2c"]
 radius = 33.0
@@ -234,6 +234,10 @@ autoplay = "Idle"
 offset_top = -310.0
 offset_bottom = -280.0
 
+[node name="ShootingTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="area_entered" from="Detector_Area2D" to="." method="_on_detector_area_2d_area_entered"]
 [connection signal="area_exited" from="Detector_Area2D" to="." method="_on_detector_area_2d_area_exited"]
 [connection signal="area_entered" from="Monitoring_Area2D" to="." method="_on_monitoring_area_2d_area_entered"]
+[connection signal="timeout" from="ShootingTimer" to="." method="_on_shooting_timer_timeout"]

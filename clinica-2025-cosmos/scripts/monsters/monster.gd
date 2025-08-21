@@ -33,6 +33,18 @@ func _physics_process(delta: float) -> void:
 		move_along_path(delta)
 	elif chasing:
 		chase_player(delta)
+	handle_animations()
+
+func handle_animations():
+	if isDead():
+		animated_sprite_2d.play("Dead")
+	else:
+		if velocity == Vector2.ZERO:
+			animated_sprite_2d.play("Idle")
+		elif !chasing:
+			animated_sprite_2d.play("Move")
+		elif chasing:
+			animated_sprite_2d.play("Attack")
 
 # Calls to HPSystem to apply damage.
 func apply_damage(damage_recieved: int):

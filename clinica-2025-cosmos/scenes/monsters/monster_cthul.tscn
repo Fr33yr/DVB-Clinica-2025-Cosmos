@@ -36,7 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://drx0h6w48dsh3" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0009_skeleton-caminando-pulpo_09.png.png" id="32_xt7l2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f5cs6"]
-radius = 2025.8
+radius = 596.164
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxmyf"]
 radius = 24.0
@@ -205,11 +205,6 @@ frame_progress = 0.950226
 
 [node name="HP_Bar" parent="." instance=ExtResource("4_fb1ex")]
 
-[node name="ShootingTimer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-
 [connection signal="area_entered" from="Detector_Area2D" to="." method="_on_detector_area_2d_area_entered"]
 [connection signal="area_exited" from="Detector_Area2D" to="." method="_on_detector_area_2d_area_exited"]
 [connection signal="area_entered" from="Monitoring_Area2D" to="." method="_on_monitoring_area_2d_area_entered"]
-[connection signal="timeout" from="ShootingTimer" to="." method="_on_shooting_timer_timeout"]

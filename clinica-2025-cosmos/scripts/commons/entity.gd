@@ -27,7 +27,6 @@ func _ready():
 func apply_damage(damage_recieved: int):
 	hp_system.apply_damage(damage_recieved)
 
-
 # Disables all functions. Called from signal.
 func on_Died():
 	collision_shape_2d.set_deferred("disabled",true)
@@ -38,3 +37,6 @@ func on_Died():
 	monitorable_collision_shape_2d.set_deferred("disabled",true)
 	monitoring_collision_shape_2d.set_deferred("disabled",true)
 	queue_free()
+
+func isDead() -> bool:
+	return hp_system.hp_current <= 0
