@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba1ofrwmy30rc"]
+
+[ext_resource type="Script" uid="uid://c2ma17m8ds6dn" path="res://scripts/commons/enemy_spawn_zone.gd" id="1_ayqtj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whl33"]
+size = Vector2(1920, 1280)
+
+[node name="EnemySpawnZone" type="Node2D"]
+script = ExtResource("1_ayqtj")
+
+[node name="SpawnArea2D" type="Area2D" parent="."]
+y_sort_enabled = true
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea2D"]
+y_sort_enabled = true
+shape = SubResource("RectangleShape2D_whl33")
+
+[node name="ZoneDurationTimer" type="Timer" parent="."]
+wait_time = 25.0
+one_shot = true
+
+[node name="SpawnDelayTimer" type="Timer" parent="."]
+
+[node name="EnemiesContainer" type="Node2D" parent="."]
+top_level = true
+y_sort_enabled = true
+
+[connection signal="area_entered" from="SpawnArea2D" to="." method="_on_spawn_area_2d_area_entered"]
+[connection signal="timeout" from="ZoneDurationTimer" to="." method="_on_zone_duration_timer_timeout"]
+[connection signal="timeout" from="SpawnDelayTimer" to="." method="_on_spawn_delay_timer_timeout"]

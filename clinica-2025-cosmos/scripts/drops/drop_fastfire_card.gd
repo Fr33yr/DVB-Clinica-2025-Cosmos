@@ -7,7 +7,7 @@ class_name Drop_FastFire
 func _on_area_2d_area_entered(area):
 	var areaParent = area.get_parent()
 	if areaParent is Player:
-		var powerUp: PowerUp = preload("res://scenes/powerUps/PowerUp_FastFire.tscn").instantiate()
+		var powerUp: PowerUp = preload("res://scenes/powerUps/PowerUp_RapidFire.tscn").instantiate()
 		powerUp.player = areaParent
 		PlayerPowerUps.powerup_collected({
 		"powerUp": powerUp,

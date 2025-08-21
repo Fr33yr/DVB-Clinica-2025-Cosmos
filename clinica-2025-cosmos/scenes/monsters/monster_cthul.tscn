@@ -197,9 +197,8 @@ shape = SubResource("CapsuleShape2D_wiubh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.38419e-07, -2.38419e-07)
 sprite_frames = SubResource("SpriteFrames_7mumi")
-animation = &"Move"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.950226
 
 [node name="HP_System" parent="." instance=ExtResource("3_31j4w")]
 

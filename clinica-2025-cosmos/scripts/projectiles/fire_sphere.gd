@@ -1,10 +1,11 @@
-extends Area2D
+extends PlayerBaseCard
 
-class_name PlayerFireShpere 
+class_name PlayerShieldCard
 
-@export var damage: int = 1
-
+func _ready():
+	damage = 3
 
 func _on_area_entered(area):
-	if area is Monster:
-		print("Monster collided with fireball ")
+	var areaParent = area.get_parent()
+	if areaParent is Monster:
+		destroy_projectile()

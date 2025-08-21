@@ -9,6 +9,7 @@
 size = Vector2(52, 92)
 
 [node name="DropFastfireCard" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_w8ofy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

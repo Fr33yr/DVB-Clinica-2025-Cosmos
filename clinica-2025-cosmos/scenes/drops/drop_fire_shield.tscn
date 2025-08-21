@@ -10,6 +10,7 @@ size = Vector2(30, 45)
 size = Vector2(56, 96)
 
 [node name="DropFireShield" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_b7avf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

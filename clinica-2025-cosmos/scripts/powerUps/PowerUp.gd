@@ -1,18 +1,18 @@
 extends Node
+
 class_name PowerUp
 
 var player: Player
-var timer: Timer
+
+@onready var duration_timer = $DurationTimer
+@export var duration: float = 10.0
 
 func _ready():
-	timer = Timer.new()
-	add_child(timer)
-	timer.one_shot = true
+	duration_timer.one_shot = true
+	duration_timer.start(duration)
 
-func start(time: float = -1.0):
-	if time > 0:
-		timer.wait_time = time
-	timer.start()
+func _on_duration_timer_timeout():
+	remove_powerUp()
 
-func is_stopped() -> bool:
-	return timer.is_stopped()
+func remove_powerUp():
+	queue_free()

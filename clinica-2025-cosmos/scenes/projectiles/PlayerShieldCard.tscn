@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://8brmmxcqpftv"]
+
+[ext_resource type="Script" uid="uid://cq0ec0qpsi7aq" path="res://scripts/projectiles/fire_sphere.gd" id="1_wyyrf"]
+[ext_resource type="Texture2D" uid="uid://dwckv7xom32nd" path="res://assets/Bullet Card/bullet_0000_Capa-4.png" id="2_fxrxb"]
+[ext_resource type="Texture2D" uid="uid://bclp01mu7iqsv" path="res://assets/Bullet Card/bullet_0001_Capa-3.png" id="3_gkmcv"]
+[ext_resource type="Texture2D" uid="uid://bia86xed2hxox" path="res://assets/Bullet Card/bullet_0002_Capa-2.png" id="4_3wcf7"]
+[ext_resource type="Texture2D" uid="uid://cja2if4jh325s" path="res://assets/Bullet Card/bullet_0003_Capa-1.png" id="5_oun18"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a74bw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fxrxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gkmcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3wcf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oun18")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp4rj"]
+size = Vector2(45, 72)
+
+[node name="PlayerShieldCard" type="Area2D"]
+y_sort_enabled = true
+script = ExtResource("1_wyyrf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_a74bw")
+autoplay = "default"
+frame_progress = 0.918848
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, -9.53674e-07)
+shape = SubResource("RectangleShape2D_bp4rj")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

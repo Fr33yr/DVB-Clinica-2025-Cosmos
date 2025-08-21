@@ -7,7 +7,7 @@ class_name Monster
 
 @onready var hp_bar: HPBar = $HP_Bar
 
-var chase_speed: float = 500
+var chase_speed: float = 300
 
 @onready var patrol_path: Array[Marker2D]
 @onready var patrol_wait_time: float
@@ -94,9 +94,6 @@ func on_Died():
 func _on_monitoring_area_2d_area_entered(area):
 	if area is PlayerBaseCard:
 		var damage_recieved = area.damage
-		hp_system.apply_damage(damage_recieved)
-	elif area is PlayerFireShpere:
-		var damage_recieved = (area as PlayerFireShpere).damage
 		hp_system.apply_damage(damage_recieved)
 
 

@@ -15,7 +15,7 @@ class_name Entity
 var damage: int = 1
 var hp_max: int
 
-var move_speed: float = 100
+var move_speed: float = 200
 
 # Initializes the HPSystem.
 func _ready():

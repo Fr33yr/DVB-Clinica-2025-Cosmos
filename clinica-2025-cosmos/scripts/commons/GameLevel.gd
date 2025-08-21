@@ -4,9 +4,11 @@ class_name LevelManager
 
 @onready var player = $Player
 @onready var projectile_container = $ProjectileContainer
+@onready var enemy_spawn_zone = $EnemySpawnZone
 
 func _ready():
-	player.projectile_shot.connect(_on_player_shot) 
+	player.projectile_shot.connect(_on_player_shot)
+	enemy_spawn_zone.player = player
 
 func _on_player_shot(projectile_scene, muzzle_position: Vector2, aim_angle: float):
 	var projectile: Projectile = projectile_scene.instantiate()

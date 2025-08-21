@@ -44,7 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://niowg4i6lntj" path="res://assets/Monsters/DemonPez/caminar/caminar1_0013_caminar_13.png.png" id="40_tfwum"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w5nxb"]
-radius = 2136.11
+radius = 1525.89
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tfl2c"]
 radius = 33.0

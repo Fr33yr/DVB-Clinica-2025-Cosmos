@@ -11,13 +11,16 @@ signal projectile_shot
 
 var friction : float = 1000
 
-var stronger_fire_mode: bool = false
-var stronger_fire_duration: float = 10.0
-var rapid_fire_mode: bool = false
-var rapid_fire_duration: float = 10.0
+var stronger_fire_powerup: PowerUp_StrongCard = null
+var rapid_fire_powerup: PowerUp_RapidFire = null
+var shield_powerup: PowerUp_Shield = null
 
-var fire_delay_normal: float = 0.2
-var fire_delay_fast: float = 0.05
+var stronger_fire_mode: bool = false
+var rapid_fire_mode: bool = false
+var shield_card_mode: bool = false
+
+var fire_delay_normal: float = 0.15
+var fire_delay_fast: float = 0.07
 
 var character_direction : Vector2
 var aim_direction : Vector2
@@ -79,6 +82,8 @@ func aiming_input():
 
 func buttons_input():
 	pass
+
+
 # Manages shooting time delay.
 func manage_shooting():
 	var firing: bool
@@ -97,6 +102,7 @@ func manage_shooting():
 func shoot():
 	if aim_direction == Vector2.ZERO: 
 		pass
+		
 	var projectile
 	if stronger_fire_mode == true:
 		projectile = preload("res://scenes/projectiles/playerStrongCard.tscn")

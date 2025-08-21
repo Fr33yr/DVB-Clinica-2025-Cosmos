@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://vn7htn43g5t4"]
+[gd_scene load_steps=6 format=3 uid="uid://vn7htn43g5t4"]
 
 [ext_resource type="Script" uid="uid://drc1c4v3g310a" path="res://scripts/commons/GameLevel.gd" id="1_croed"]
 [ext_resource type="Texture2D" uid="uid://br5duginld5kn" path="res://assets/chess_bg.png" id="2_7sn1t"]
+[ext_resource type="PackedScene" uid="uid://ba1ofrwmy30rc" path="res://scenes/commons/enemy_spawn_zone.tscn" id="2_hu8pu"]
 [ext_resource type="PackedScene" uid="uid://bhsvn7klaynmo" path="res://scenes/UI/screenControls.tscn" id="3_hu8pu"]
 [ext_resource type="PackedScene" uid="uid://dmd2rv33dxeu2" path="res://scenes/player.tscn" id="4_j30t8"]
-[ext_resource type="PackedScene" uid="uid://c8h0l611mr476" path="res://scenes/monsters/monsterAquatic.tscn" id="5_7sn1t"]
-[ext_resource type="PackedScene" uid="uid://b5miaeshocwmn" path="res://scenes/monsters/monster_cthul.tscn" id="6_hu8pu"]
 
 [node name="GameManager" type="Node"]
 
@@ -15,6 +14,34 @@ follow_viewport_enabled = true
 [node name="LevelManager" type="Node2D" parent="GameLayer"]
 y_sort_enabled = true
 script = ExtResource("1_croed")
+
+[node name="EnemySpawnZone" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
+position = Vector2(701, -828)
+enemy_spawners = [NodePath("SpawnPoint_1"), NodePath("SpawnPoint_2"), NodePath("SpawnPoint_3"), NodePath("SpawnPoint_4"), NodePath("SpawnPoint_5"), NodePath("SpawnPoint_6")]
+
+[node name="SpawnPoint_1" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
+position = Vector2(327, -641)
+
+[node name="SpawnPoint_2" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
+position = Vector2(-257, -641)
+
+[node name="SpawnPoint_3" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
+position = Vector2(-612, -644)
+
+[node name="SpawnPoint_4" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
+position = Vector2(666, -644)
+
+[node name="SpawnPoint_5" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
+position = Vector2(-954, -431)
+
+[node name="SpawnPoint_6" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
+position = Vector2(973, -447)
+
+[node name="Background2" type="Sprite2D" parent="GameLayer/LevelManager"]
+z_index = -5
+y_sort_enabled = true
+position = Vector2(677, -648)
+texture = ExtResource("2_7sn1t")
 
 [node name="Background" type="Sprite2D" parent="GameLayer/LevelManager"]
 show_behind_parent = true
@@ -33,193 +60,8 @@ position_smoothing_speed = 10.0
 editor_draw_limits = true
 
 [node name="ProjectileContainer" type="Node2D" parent="GameLayer/LevelManager"]
+top_level = true
 y_sort_enabled = true
-
-[node name="Monsters" type="Node2D" parent="GameLayer/LevelManager"]
-y_sort_enabled = true
-
-[node name="MonsterAquatic" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(698, -439)
-
-[node name="MonsterAquatic2" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(920, -389)
-
-[node name="MonsterAquatic3" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(1103, -280)
-
-[node name="MonsterAquatic4" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(1287, -117)
-
-[node name="MonsterAquatic5" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(1425, 67)
-
-[node name="MonsterAquatic6" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(1471, 259)
-
-[node name="MonsterAquatic7" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(1450, 522)
-
-[node name="MonsterAquatic8" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(1366, 739)
-
-[node name="MonsterAquatic9" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(1149, 927)
-
-[node name="MonsterAquatic10" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(978, 1048)
-
-[node name="MonsterAquatic11" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(790, 1136)
-
-[node name="MonsterAquatic12" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(610, 1107)
-
-[node name="MonsterAquatic13" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(422, 1082)
-
-[node name="MonsterAquatic14" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(301, 973)
-
-[node name="MonsterAquatic15" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(163, 814)
-
-[node name="MonsterAquatic16" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(55, 656)
-
-[node name="MonsterAquatic17" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(-20, 443)
-
-[node name="MonsterAquatic18" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(-83, 267)
-
-[node name="MonsterAquatic19" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(-50, 71)
-
-[node name="MonsterAquatic20" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(30, -113)
-
-[node name="MonsterAquatic21" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(138, -292)
-
-[node name="MonsterAquatic22" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(293, -397)
-
-[node name="MonsterAquatic23" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("5_7sn1t")]
-position = Vector2(489, -455)
-
-[node name="monsterCthul" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(653, 1863)
-
-[node name="monsterCthul2" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(868, 1834)
-
-[node name="monsterCthul3" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(1090, 1782)
-
-[node name="monsterCthul4" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(1356, 1656)
-
-[node name="monsterCthul5" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(1578, 1538)
-
-[node name="monsterCthul6" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(1763, 1316)
-
-[node name="monsterCthul7" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(1985, 1116)
-
-[node name="monsterCthul8" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(2104, 849)
-
-[node name="monsterCthul9" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(2193, 590)
-
-[node name="monsterCthul10" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(2207, 302)
-
-[node name="monsterCthul11" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(2252, -9)
-
-[node name="monsterCthul12" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(2156, -290)
-
-[node name="monsterCthul13" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(2000, -542)
-
-[node name="monsterCthul14" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(1852, -771)
-
-[node name="monsterCthul15" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(1638, -964)
-
-[node name="monsterCthul16" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(1445, -1134)
-
-[node name="monsterCthul17" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(1245, -1238)
-
-[node name="monsterCthul18" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(1046, -1356)
-
-[node name="monsterCthul19" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(787, -1356)
-
-[node name="monsterCthul20" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(557, -1363)
-
-[node name="monsterCthul21" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(350, -1349)
-
-[node name="monsterCthul22" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(135, -1312)
-
-[node name="monsterCthul23" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-65, -1201)
-
-[node name="monsterCthul24" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-272, -1112)
-
-[node name="monsterCthul25" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-435, -956)
-
-[node name="monsterCthul26" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-597, -786)
-
-[node name="monsterCthul27" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-745, -572)
-
-[node name="monsterCthul28" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-834, -283)
-
-[node name="monsterCthul29" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-901, 13)
-
-[node name="monsterCthul30" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-982, 302)
-
-[node name="monsterCthul31" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-938, 590)
-
-[node name="monsterCthul32" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-827, 872)
-
-[node name="monsterCthul33" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-701, 1160)
-
-[node name="monsterCthul34" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-523, 1382)
-
-[node name="monsterCthul35" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-324, 1567)
-
-[node name="monsterCthul36" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(-109, 1730)
-
-[node name="monsterCthul37" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(91, 1878)
-
-[node name="monsterCthul38" parent="GameLayer/LevelManager/Monsters" instance=ExtResource("6_hu8pu")]
-position = Vector2(357, 1930)
 
 [node name="ScreenControls" parent="." instance=ExtResource("3_hu8pu")]
 layer = 5

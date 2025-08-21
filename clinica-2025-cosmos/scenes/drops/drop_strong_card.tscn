@@ -9,6 +9,7 @@
 size = Vector2(62, 97)
 
 [node name="Drop_StrongCard" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_f2aj4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

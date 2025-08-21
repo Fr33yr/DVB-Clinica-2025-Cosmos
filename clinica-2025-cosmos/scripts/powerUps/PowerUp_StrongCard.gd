@@ -1,16 +1,17 @@
 extends PowerUp
+
 class_name PowerUp_StrongCard
 
 func _ready():
-	timer = Timer.new()
-	add_child(timer)
-	timer.one_shot = true
-	timer.wait_time = player.stronger_fire_duration
+	duration = 10.0
 	player.stronger_fire_mode = true
-	start()
+	player.stronger_fire_powerup = self
+	super()
 
 func _process(_delta):
-	if is_stopped():
-		print("stopped")
-		player.stronger_fire_mode = false
-		queue_free()
+	if !player.stronger_fire_mode:
+		remove_powerUp()
+
+func remove_powerUp():
+	player.stronger_fire_mode = false
+	super()

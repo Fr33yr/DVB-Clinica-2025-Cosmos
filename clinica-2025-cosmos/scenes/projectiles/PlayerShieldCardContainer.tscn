@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds5u0nhrjyi4b"]
+
+[ext_resource type="Script" uid="uid://d4gwx4diucdkf" path="res://scripts/projectiles/fire_spheres.gd" id="1_1okp8"]
+[ext_resource type="PackedScene" uid="uid://8brmmxcqpftv" path="res://scenes/projectiles/PlayerShieldCard.tscn" id="2_rvt8i"]
+
+[node name="PlayerShieldCardContainer" type="Node2D" node_paths=PackedStringArray("cards")]
+script = ExtResource("1_1okp8")
+radius = 245.0
+sphere_scene = ExtResource("2_rvt8i")
+orbit_speed = 4.0
+cards = [NodePath("PlayerShieldCard"), NodePath("PlayerShieldCard2"), NodePath("PlayerShieldCard3"), NodePath("PlayerShieldCard4"), NodePath("PlayerShieldCard5"), NodePath("PlayerShieldCard6"), NodePath("PlayerShieldCard7"), NodePath("PlayerShieldCard8")]
+
+[node name="PlayerShieldCard" parent="." instance=ExtResource("2_rvt8i")]
+position = Vector2(-300, 0)
+
+[node name="PlayerShieldCard2" parent="." instance=ExtResource("2_rvt8i")]
+position = Vector2(300, 0)
+
+[node name="PlayerShieldCard3" parent="." instance=ExtResource("2_rvt8i")]
+position = Vector2(0, 300)
+
+[node name="PlayerShieldCard4" parent="." instance=ExtResource("2_rvt8i")]
+position = Vector2(0, -300)
+
+[node name="PlayerShieldCard5" parent="." instance=ExtResource("2_rvt8i")]
+position = Vector2(225, 225)
+
+[node name="PlayerShieldCard6" parent="." instance=ExtResource("2_rvt8i")]
+position = Vector2(225, -225)
+
+[node name="PlayerShieldCard7" parent="." instance=ExtResource("2_rvt8i")]
+position = Vector2(-225, 225)
+
+[node name="PlayerShieldCard8" parent="." instance=ExtResource("2_rvt8i")]
+position = Vector2(-225, -225)

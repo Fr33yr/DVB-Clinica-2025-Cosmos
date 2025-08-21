@@ -7,7 +7,7 @@ class_name MonsterProjectile
 func _ready():
 	super()
 	damage = 1
-	speed = 250
+	speed = 500
 	rotationSpeed = 25.0
 
 func _physics_process(delta):

@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxu7notpaxlau"]
+[gd_scene load_steps=4 format=3 uid="uid://cnnqykfobdvms"]
 
-[ext_resource type="Script" uid="uid://dhe10w41a3f3r" path="res://scripts/drops/drop_spread_card.gd" id="1_sbxea"]
+[ext_resource type="Script" path="res://scripts/drops/drop_spread_card.gd" id="1_sbxea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbxea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yk88p"]
 
 [node name="DropSpreadCard" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_sbxea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

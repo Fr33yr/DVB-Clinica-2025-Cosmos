@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2mwyl31bvsvw"]
-
-[ext_resource type="Script" uid="uid://b5pao5ia3hq4o" path="res://scripts/powerUps/power_up_fast_fire.gd" id="1_jaq3c"]
-
-[node name="PowerUpFastFire" type="Node"]
-script = ExtResource("1_jaq3c")
