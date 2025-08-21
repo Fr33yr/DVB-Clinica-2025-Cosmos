@@ -120,6 +120,8 @@ func manage_drops():
 		drop = preload("res://scenes/drops/drop_strong_card.tscn").instantiate()
 	if numero == 2:
 		drop = preload("res://scenes/drops/drop_fire_shield.tscn").instantiate()
+	if numero ==3:
+		drop = preload("res://scenes/drops/drop_fastfire_card.tscn").instantiate()
 		
 	if drop != null:
 		drop.global_position = entity.global_position

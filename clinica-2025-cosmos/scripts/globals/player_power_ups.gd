@@ -36,9 +36,8 @@ func swap_powerup():
 		
 func use_powerup():
 	if equiped_powerups["current"].has("powerUp"):
-		var packed_scene: PackedScene = equiped_powerups["current"]["powerUp"]
-		if packed_scene:
-			var instance = packed_scene.instantiate()
+		var instance: Node = equiped_powerups["current"]["powerUp"]
+		if instance:
 			print("instance exists ", instance)
 			print("current power up ", current_power_up_container)
 			current_power_up_container.add_child(instance)

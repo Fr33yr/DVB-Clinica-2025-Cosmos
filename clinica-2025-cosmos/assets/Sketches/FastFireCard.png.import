@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3bdn8uh4oi48"
-path="res://.godot/imported/energy_cell.png-a3d3f059e7a79a4114c768ccc12d9d81.ctex"
+uid="uid://b4o74i3itvuys"
+path="res://.godot/imported/FastFireCard.png-34e2f4f9e9b91f18096912cbaec3479f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Icons/energy_cell.png"
-dest_files=["res://.godot/imported/energy_cell.png-a3d3f059e7a79a4114c768ccc12d9d81.ctex"]
+source_file="res://assets/Sketches/FastFireCard.png"
+dest_files=["res://.godot/imported/FastFireCard.png-34e2f4f9e9b91f18096912cbaec3479f.ctex"]
 
 [params]
 

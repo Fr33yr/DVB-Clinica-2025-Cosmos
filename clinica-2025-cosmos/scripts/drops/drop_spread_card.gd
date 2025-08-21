@@ -1,17 +1,15 @@
 extends Drop
-class_name Drop_StrongCard
+class_name Drop_SpreadCard
 @onready var sprite = $Sprite2D
 
 
 func _on_area_2d_area_entered(area):
 	var areaParent = area.get_parent()
 	if areaParent is Player:
-		var powerUp: PowerUp = preload("res://scenes/powerUps/PowerUp_StrongCard.tscn").instantiate()
-		powerUp.player = areaParent
+		powerUp = PowerUp_StrongCard.new()
 		PlayerPowerUps.powerup_collected({
-		"powerUp": powerUp,
-		"drop_sprite_path": sprite.texture.resource_path
-		})
+		"powerUp": "",
+		"drop_sprite_path": sprite.texture.resource_path})
 		destroy_drop()
 
 func _on_timer_timeout():

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3emfkurookdi"]
+
+[ext_resource type="Script" uid="uid://dxx4ijom0sjno" path="res://scripts/powerUps/power_up_spread_card.gd" id="1_qu440"]
+
+[node name="PowerUpSpreadCard" type="Node"]
+script = ExtResource("1_qu440")
