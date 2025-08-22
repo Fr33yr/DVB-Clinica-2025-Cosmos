@@ -14,10 +14,12 @@ var friction : float = 1000
 var stronger_fire_powerup: PowerUp_StrongCard = null
 var rapid_fire_powerup: PowerUp_RapidFire = null
 var shield_powerup: PowerUp_Shield = null
+var spread_powerup: PowerUp_SpreadCard = null
 
 var stronger_fire_mode: bool = false
 var rapid_fire_mode: bool = false
 var shield_card_mode: bool = false
+var spread_card_mode: bool = false
 
 var fire_delay_normal: float = 0.15
 var fire_delay_fast: float = 0.07
@@ -102,15 +104,33 @@ func manage_shooting():
 func shoot():
 	if aim_direction == Vector2.ZERO: 
 		pass
-		
-	var projectile
+	var projectile_path: String
 	if stronger_fire_mode == true:
-		projectile = preload("res://scenes/projectiles/playerStrongCard.tscn")
+		projectile_path = PathToProjectiles.playerStrongCard
 	else:
-		projectile = preload("res://scenes/projectiles/playerBaseCard.tscn")
-	var aim_angle = muzzle.rotation + deg_to_rad(90)
-	var muzzle_position = muzzle.global_position
-	projectile_shot.emit(projectile, muzzle_position, aim_angle)
+		projectile_path = PathToProjectiles.playerBaseCard
+	if spread_card_mode:
+		manage_spread(projectile_path)
+	else:
+		var aim_angle = muzzle.rotation + deg_to_rad(90)
+		var muzzle_position = muzzle.global_position
+		var projectile_instance = load(projectile_path)
+		projectile_shot.emit(projectile_instance, muzzle_position, aim_angle, aim_direction)
+	
+func manage_spread(path: String):
+	var projectile_1 = load(path)
+	var projectile_2 = load(path)
+	var projectile_3 = load(path)
+	var aim_angle_1 = muzzle.rotation + deg_to_rad(65)
+	var aim_angle_2 = muzzle.rotation + deg_to_rad(90)
+	var aim_angle_3 = muzzle.rotation + deg_to_rad(115)
+	var muzzle_position = muzzle.global_position 
+	var aim_direction_1 = aim_direction.rotated(deg_to_rad(-35)) 
+	var aim_direction_2 = aim_direction 
+	var aim_direction_3 = aim_direction.rotated(deg_to_rad(35))  
+	projectile_shot.emit(projectile_1, muzzle_position, aim_angle_1, aim_direction_1)
+	projectile_shot.emit(projectile_2, muzzle_position, aim_angle_2, aim_direction_2)
+	projectile_shot.emit(projectile_3, muzzle_position, aim_angle_3, aim_direction_3)
 
 func manage_animation():
 	pass

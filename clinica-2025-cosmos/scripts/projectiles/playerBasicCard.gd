@@ -6,8 +6,6 @@ var player: CharacterBody2D
 
 func _ready():
 	super()
-	player = $"../../Player"
-	direction = player.aim_direction
 	damage = 1
 	speed = 2000
 	

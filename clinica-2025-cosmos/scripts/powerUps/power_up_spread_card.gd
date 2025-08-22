@@ -1,4 +1,12 @@
 extends PowerUp
 class_name PowerUp_SpreadCard
 
-@onready var player_ref = $"../../.."
+func _ready():
+	duration = 5.0
+	player.spread_card_mode = true
+	player.spread_powerup = self
+	super()
+	
+func remove_powerUp():
+	player.spread_card_mode = false
+	super()

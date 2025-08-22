@@ -4,11 +4,13 @@ class_name Drop_SpreadCard
 
 
 func _on_area_2d_area_entered(area):
+	
 	var areaParent = area.get_parent()
 	if areaParent is Player:
-		powerUp = PowerUp_StrongCard.new()
+		var powerUp: PowerUp = preload("res://scenes/powerUps/PowerUp_SpreadCard.tscn").instantiate()
+		powerUp.player = areaParent
 		PlayerPowerUps.powerup_collected({
-		"powerUp": "",
+		"powerUp": powerUp,
 		"drop_sprite_path": sprite.texture.resource_path})
 		destroy_drop()
 
