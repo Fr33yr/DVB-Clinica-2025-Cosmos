@@ -89,13 +89,20 @@ func on_Died():
 	manage_drops()
 	hp_bar.visible = false
 	detector_area_2d.monitoring = false
-	super()
+	collision_shape_2d.set_deferred("disabled",true)
+	collision_shape_2d.disabled = true
+	monitorable_area_2d.monitoring = false
+	monitoring_area_2d.monitorable = false
+	monitorable_collision_shape_2d.set_deferred("disabled",true)
+	monitoring_collision_shape_2d.set_deferred("disabled",true)
+	await get_tree().create_timer(0.2).timeout
+	queue_free()
 
 func _on_monitoring_area_2d_area_entered(area):
-	if area is PlayerBaseCard:
-		var damage_recieved = area.damage
+	var areaParent = area.get_parent()
+	if areaParent is PlayerBaseCard:
+		var damage_recieved = areaParent.damage
 		hp_system.apply_damage(damage_recieved)
-
 
 func _on_detector_area_2d_area_entered(area):
 	var areaParent = area.get_parent()
@@ -110,17 +117,17 @@ func _on_detector_area_2d_area_exited(area):
 		chasing = false
 
 func manage_drops():
-	var numero = randi_range(1,10)
+	var numero = randi_range(1,20)
 	var drop: StaticBody2D
 	
 	if numero == 1:
-		drop = preload("res://scenes/drops/drop_strong_card.tscn").instantiate()
+		drop = load("res://scenes/drops/drop_strong_card.tscn").instantiate()
 	if numero == 2:
-		drop = preload("res://scenes/drops/drop_fire_shield.tscn").instantiate()
+		drop = load("res://scenes/drops/drop_fire_shield.tscn").instantiate()
 	if numero ==3:
-		drop = preload("res://scenes/drops/drop_fastfire_card.tscn").instantiate()
+		drop = load("res://scenes/drops/drop_fastfire_card.tscn").instantiate()
 	if numero == 4:
-		drop = preload("res://scenes/drops/drop_spread_card.tscn").instantiate()
+		drop = load("res://scenes/drops/drop_spread_card.tscn").instantiate()
 		
 	if drop != null:
 		drop.global_position = entity.global_position

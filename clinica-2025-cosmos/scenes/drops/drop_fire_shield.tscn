@@ -10,21 +10,30 @@ size = Vector2(30, 45)
 size = Vector2(56, 96)
 
 [node name="DropFireShield" type="StaticBody2D"]
+z_index = -1
 y_sort_enabled = true
 script = ExtResource("1_b7avf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b7avf")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_i6epi")
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = -1
+y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 texture_filter = 2
 position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_i6epi")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

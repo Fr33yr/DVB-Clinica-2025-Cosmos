@@ -5,7 +5,7 @@ class_name MonsterAquatic
 @onready var shooting_timer = $ShootingTimer
 
 func _ready():
-	hp_max = 1
+	hp_max = 3
 	super()
 
 func _on_shooting_timer_timeout():

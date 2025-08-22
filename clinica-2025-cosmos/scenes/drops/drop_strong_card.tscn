@@ -8,16 +8,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_630aa"]
 size = Vector2(62, 97)
 
-[node name="Drop_StrongCard" type="StaticBody2D"]
+[node name="DropStrongCard" type="StaticBody2D"]
+z_index = -1
 y_sort_enabled = true
 script = ExtResource("1_f2aj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f2aj4")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.999997, 0.0909568, 0.0594723, 1)
 texture = ExtResource("2_5jqla")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_f2aj4")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -26,4 +28,9 @@ texture_filter = 1
 position = Vector2(4, -1.5)
 shape = SubResource("RectangleShape2D_630aa")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

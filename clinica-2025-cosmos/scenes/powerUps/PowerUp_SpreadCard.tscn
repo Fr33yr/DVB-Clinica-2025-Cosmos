@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cad72lfr6sgnc"]
+[gd_scene load_steps=2 format=3 uid="uid://b83t56v6ylle"]
 
 [ext_resource type="Script" uid="uid://dxx4ijom0sjno" path="res://scripts/powerUps/power_up_spread_card.gd" id="1_qu440"]
 

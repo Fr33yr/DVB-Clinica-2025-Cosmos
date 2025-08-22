@@ -33,7 +33,6 @@ func on_Died():
 	collision_shape_2d.disabled = true
 	monitorable_area_2d.monitoring = false
 	monitoring_area_2d.monitorable = false
-	animated_sprite_2d.visible = false
 	monitorable_collision_shape_2d.set_deferred("disabled",true)
 	monitoring_collision_shape_2d.set_deferred("disabled",true)
 	queue_free()

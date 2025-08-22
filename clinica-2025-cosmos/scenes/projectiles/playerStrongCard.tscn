@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bia86xed2hxox" path="res://assets/Bullet Card/bullet_0002_Capa-2.png" id="4_oqtg1"]
 [ext_resource type="Texture2D" uid="uid://cja2if4jh325s" path="res://assets/Bullet Card/bullet_0003_Capa-1.png" id="5_sg40t"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfs3n"]
+size = Vector2(66.0002, 45.9998)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8e6dd"]
 animations = [{
 "frames": [{
@@ -26,14 +29,19 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfs3n"]
-size = Vector2(82.9999, 52.0003)
-
 [node name="PlayerStrongCard" type="Area2D"]
-z_index = -1
 y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
+monitorable = false
 script = ExtResource("1_05cdm")
+
+[node name="Monitorable_Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monitorable_Area2D"]
+position = Vector2(-3, -1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_dfs3n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 0.288013, 0.218615, 1)
@@ -41,12 +49,11 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8e6dd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -0.500044)
+position = Vector2(-3, -1)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_dfs3n")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(4, -2)
-scale = Vector2(4.4, 6.1)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

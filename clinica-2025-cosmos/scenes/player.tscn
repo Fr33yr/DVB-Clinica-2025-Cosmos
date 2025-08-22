@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmd2rv33dxeu2"]
+[gd_scene load_steps=12 format=3 uid="uid://dmd2rv33dxeu2"]
 
 [ext_resource type="Script" uid="uid://dxy6bc066u671" path="res://scripts/player/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cvppx4rmrrcqu" path="res://assets/Sketches/personajes-demogorgon_0007_Capa-2.png" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://q0iivc0ro1cv" path="res://scripts/player/muzzle.gd" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://tv8hlohyhaex" path="res://scenes/commons/hp_system.tscn" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://ds7vbvnswgy8w" path="res://sfx/shoots.wav" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://bk8ngug72bbke" path="res://sfx/carta.mp3" id="6_tuyoq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
 animations = [{
@@ -23,6 +25,16 @@ height = 180.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
 radius = 40.0
 height = 180.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tuyoq"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("5_qlg0r")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fjrip"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("6_tuyoq")
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -66,4 +78,14 @@ autostart = true
 
 [node name="OtherPowerUp" type="Node" parent="PowerUpsContainer"]
 
-[connection signal="area_entered" from="Monitorable_Area2D" to="." method="_on_monitorable_area_2d_area_entered"]
+[node name="Shoot_SFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_tuyoq")
+max_polyphony = 6
+bus = &"Repeating SFX"
+
+[node name="DropCardPickUp_SFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_fjrip")
+max_polyphony = 3
+bus = &"SFX"
+
+[connection signal="area_entered" from="Monitoring_Area2D" to="." method="_on_monitoring_area_2d_area_entered"]

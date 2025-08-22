@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bop1d6g4c43kj"
+path="res://.godot/imported/jugador muerto.wav-042286c4c22e68e2b2378ad1eb4a568f.sample"
+
+[deps]
+
+source_file="res://sfx/jugador muerto.wav"
+dest_files=["res://.godot/imported/jugador muerto.wav-042286c4c22e68e2b2378ad1eb4a568f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

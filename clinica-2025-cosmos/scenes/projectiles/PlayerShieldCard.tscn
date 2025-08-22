@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bia86xed2hxox" path="res://assets/Bullet Card/bullet_0002_Capa-2.png" id="4_3wcf7"]
 [ext_resource type="Texture2D" uid="uid://cja2if4jh325s" path="res://assets/Bullet Card/bullet_0003_Capa-1.png" id="5_oun18"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp4rj"]
+size = Vector2(45, 72)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_a74bw"]
 animations = [{
 "frames": [{
@@ -26,12 +29,17 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp4rj"]
-size = Vector2(45, 72)
-
 [node name="PlayerShieldCard" type="Area2D"]
 y_sort_enabled = true
+monitorable = false
 script = ExtResource("1_wyyrf")
+
+[node name="Monitorable_Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monitorable_Area2D"]
+position = Vector2(-3.5, -9.53674e-07)
+shape = SubResource("RectangleShape2D_bp4rj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

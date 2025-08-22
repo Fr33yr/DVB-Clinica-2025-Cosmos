@@ -43,8 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://t4ex7u7x6t03" path="res://assets/Monsters/DemonPez/caminar/caminar1_0012_caminar_12.png.png" id="39_bf1ff"]
 [ext_resource type="Texture2D" uid="uid://niowg4i6lntj" path="res://assets/Monsters/DemonPez/caminar/caminar1_0013_caminar_13.png.png" id="40_tfwum"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_w5nxb"]
-radius = 1525.89
+[sub_resource type="CircleShape2D" id="CircleShape2D_cfwg5"]
+radius = 1920.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tfl2c"]
 radius = 33.0
@@ -203,10 +203,11 @@ script = ExtResource("1_i73a5")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector_Area2D"]
-shape = SubResource("CircleShape2D_w5nxb")
+shape = SubResource("CircleShape2D_cfwg5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_tfl2c")
+disabled = true
 
 [node name="Monitoring_Area2D" type="Area2D" parent="."]
 monitorable = false

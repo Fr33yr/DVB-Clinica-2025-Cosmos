@@ -18,7 +18,6 @@ func _on_area_2d_area_entered(area):
 	if areaParent is Player:
 		destroy_drop()
 
-
 func _on_timer_timeout():
 	destroy_drop()
 

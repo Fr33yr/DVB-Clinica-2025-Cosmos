@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://vn7htn43g5t4"]
+[gd_scene load_steps=10 format=3 uid="uid://vn7htn43g5t4"]
 
 [ext_resource type="Script" uid="uid://drc1c4v3g310a" path="res://scripts/commons/GameLevel.gd" id="1_croed"]
 [ext_resource type="Texture2D" uid="uid://br5duginld5kn" path="res://assets/chess_bg.png" id="2_7sn1t"]
 [ext_resource type="PackedScene" uid="uid://ba1ofrwmy30rc" path="res://scenes/commons/enemy_spawn_zone.tscn" id="2_hu8pu"]
 [ext_resource type="PackedScene" uid="uid://bhsvn7klaynmo" path="res://scenes/UI/screenControls.tscn" id="3_hu8pu"]
 [ext_resource type="PackedScene" uid="uid://dmd2rv33dxeu2" path="res://scenes/player.tscn" id="4_j30t8"]
+[ext_resource type="AudioStream" uid="uid://bfam2cw331pub" path="res://music/esquizofrenia.wav" id="6_hu8pu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7sn1t"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hu8pu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j30t8"]
 
 [node name="GameManager" type="Node"]
 
@@ -16,52 +23,120 @@ y_sort_enabled = true
 script = ExtResource("1_croed")
 
 [node name="EnemySpawnZone" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
-position = Vector2(701, -828)
-enemy_spawners = [NodePath("SpawnPoint_1"), NodePath("SpawnPoint_2"), NodePath("SpawnPoint_3"), NodePath("SpawnPoint_4"), NodePath("SpawnPoint_5"), NodePath("SpawnPoint_6")]
+position = Vector2(0, -1000)
+enemy_spawners = [NodePath("../Player/Camera2D/SpawnPoint_1"), NodePath("../Player/Camera2D/SpawnPoint_2"), NodePath("../Player/Camera2D/SpawnPoint_3"), NodePath("../Player/Camera2D/SpawnPoint_4"), NodePath("../Player/Camera2D/SpawnPoint_5"), NodePath("../Player/Camera2D/SpawnPoint_6")]
+zone_duration = 30.0
+spawn_delay = 3.0
 
-[node name="SpawnPoint_1" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
-position = Vector2(327, -641)
+[node name="EnemySpawnZone2" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
+position = Vector2(0, -3000)
+enemy_spawners = [NodePath("../Player/Camera2D/SpawnPoint_1"), NodePath("../Player/Camera2D/SpawnPoint_2"), NodePath("../Player/Camera2D/SpawnPoint_3"), NodePath("../Player/Camera2D/SpawnPoint_4"), NodePath("../Player/Camera2D/SpawnPoint_5"), NodePath("../Player/Camera2D/SpawnPoint_6")]
+zone_duration = 40.0
+spawn_delay = 2.0
 
-[node name="SpawnPoint_2" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
-position = Vector2(-257, -641)
+[node name="EnemySpawnZone3" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
+position = Vector2(0, -5000)
+enemy_spawners = [NodePath("../Player/Camera2D/SpawnPoint_1"), NodePath("../Player/Camera2D/SpawnPoint_2"), NodePath("../Player/Camera2D/SpawnPoint_3"), NodePath("../Player/Camera2D/SpawnPoint_4"), NodePath("../Player/Camera2D/SpawnPoint_5"), NodePath("../Player/Camera2D/SpawnPoint_6")]
+zone_duration = 60.0
+spawn_delay = 1.0
 
-[node name="SpawnPoint_3" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
-position = Vector2(-612, -644)
+[node name="Background6" type="Sprite2D" parent="GameLayer/LevelManager"]
+z_index = -5
+y_sort_enabled = true
+position = Vector2(0, -5000)
+texture = ExtResource("2_7sn1t")
 
-[node name="SpawnPoint_4" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
-position = Vector2(666, -644)
+[node name="Background5" type="Sprite2D" parent="GameLayer/LevelManager"]
+z_index = -5
+y_sort_enabled = true
+position = Vector2(0, -4000)
+texture = ExtResource("2_7sn1t")
 
-[node name="SpawnPoint_5" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
-position = Vector2(-954, -431)
+[node name="Background4" type="Sprite2D" parent="GameLayer/LevelManager"]
+z_index = -5
+y_sort_enabled = true
+position = Vector2(0, -3000)
+texture = ExtResource("2_7sn1t")
 
-[node name="SpawnPoint_6" type="Marker2D" parent="GameLayer/LevelManager/EnemySpawnZone"]
-position = Vector2(973, -447)
+[node name="Background3" type="Sprite2D" parent="GameLayer/LevelManager"]
+z_index = -5
+y_sort_enabled = true
+position = Vector2(0, -2000)
+texture = ExtResource("2_7sn1t")
 
 [node name="Background2" type="Sprite2D" parent="GameLayer/LevelManager"]
 z_index = -5
 y_sort_enabled = true
-position = Vector2(677, -648)
+position = Vector2(0, -1000)
 texture = ExtResource("2_7sn1t")
 
 [node name="Background" type="Sprite2D" parent="GameLayer/LevelManager"]
 show_behind_parent = true
 z_index = -5
 y_sort_enabled = true
-position = Vector2(677, 352)
 texture = ExtResource("2_7sn1t")
 
 [node name="Player" parent="GameLayer/LevelManager" instance=ExtResource("4_j30t8")]
-position = Vector2(675, 350)
+position = Vector2(0, 400)
 
 [node name="Camera2D" type="Camera2D" parent="GameLayer/LevelManager/Player"]
 y_sort_enabled = true
+limit_left = -1080
+limit_right = 1080
+limit_bottom = 500
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 editor_draw_limits = true
+
+[node name="SpawnPoint_1" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
+position = Vector2(654, -2078)
+scale = Vector2(2, 2)
+
+[node name="SpawnPoint_2" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
+position = Vector2(-514, -2078)
+scale = Vector2(2, 2)
+
+[node name="SpawnPoint_3" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
+position = Vector2(-1224, -2084)
+scale = Vector2(2, 2)
+
+[node name="SpawnPoint_4" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
+position = Vector2(1332, -2084)
+scale = Vector2(2, 2)
+
+[node name="SpawnPoint_5" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
+position = Vector2(-1908, -1658)
+scale = Vector2(2, 2)
+
+[node name="SpawnPoint_6" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
+position = Vector2(1946, -1690)
+scale = Vector2(2, 2)
 
 [node name="ProjectileContainer" type="Node2D" parent="GameLayer/LevelManager"]
 top_level = true
 y_sort_enabled = true
 
+[node name="WorldLimits" type="StaticBody2D" parent="GameLayer/LevelManager"]
+top_level = true
+
+[node name="LimitBottom" type="CollisionShape2D" parent="GameLayer/LevelManager/WorldLimits"]
+position = Vector2(0, 500)
+shape = SubResource("WorldBoundaryShape2D_7sn1t")
+
+[node name="Limit Left" type="CollisionShape2D" parent="GameLayer/LevelManager/WorldLimits"]
+position = Vector2(-1080, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_hu8pu")
+
+[node name="LimitRight" type="CollisionShape2D" parent="GameLayer/LevelManager/WorldLimits"]
+position = Vector2(1080, 0)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_j30t8")
+
 [node name="ScreenControls" parent="." instance=ExtResource("3_hu8pu")]
 layer = 5
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hu8pu")
+autoplay = true
+bus = &"Music"

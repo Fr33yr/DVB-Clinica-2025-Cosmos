@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name enemy_spawn_zone
+
 var player: Player
 
 @onready var spawn_area_2d = $SpawnArea2D
@@ -8,23 +10,32 @@ var player: Player
 @onready var zone_duration_timer = $ZoneDurationTimer
 
 @export var enemy_spawners: Array[Marker2D] = []
+@export var zone_duration: float
+@export var spawn_delay: float
 
 @onready var enemies_container = $EnemiesContainer
 
 var already_activated: bool = false
 
+func _ready():
+	spawn_delay_timer.wait_time = spawn_delay
+	zone_duration_timer.wait_time = zone_duration
+
 func _on_spawn_area_2d_area_entered(area):
 	var areaParent = area.get_parent()
 	if areaParent is Player && !already_activated:
-		print("PLAYER ENTERS SPAWN ZONE")
 		already_activated = true
 		spawn_delay_timer.start()
 		zone_duration_timer.start()
+		spawn_enemies()
 
 func _on_zone_duration_timer_timeout():
 	spawn_delay_timer.stop()
 
 func _on_spawn_delay_timer_timeout():
+	spawn_enemies()
+
+func spawn_enemies():
 	var enemy0 = get_enemy_random()
 	var enemy1 = get_enemy_random()
 	var enemy2 = get_enemy_random()

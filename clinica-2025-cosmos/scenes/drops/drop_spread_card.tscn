@@ -9,6 +9,7 @@
 size = Vector2(58, 91)
 
 [node name="DropSpreadCard" type="StaticBody2D"]
+z_index = -1
 y_sort_enabled = true
 script = ExtResource("1_sbxea")
 
@@ -24,4 +25,9 @@ shape = SubResource("RectangleShape2D_sbxea")
 position = Vector2(4, -0.5)
 shape = SubResource("RectangleShape2D_yk88p")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

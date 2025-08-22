@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c2ma17m8ds6dn" path="res://scripts/commons/enemy_spawn_zone.gd" id="1_ayqtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whl33"]
-size = Vector2(1920, 1280)
+size = Vector2(1920, 1080)
 
 [node name="EnemySpawnZone" type="Node2D"]
 script = ExtResource("1_ayqtj")
@@ -17,10 +17,11 @@ y_sort_enabled = true
 shape = SubResource("RectangleShape2D_whl33")
 
 [node name="ZoneDurationTimer" type="Timer" parent="."]
-wait_time = 25.0
+wait_time = 30.0
 one_shot = true
 
 [node name="SpawnDelayTimer" type="Timer" parent="."]
+wait_time = 1.5
 
 [node name="EnemiesContainer" type="Node2D" parent="."]
 top_level = true

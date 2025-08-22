@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://caxxeh0ee81of"
+path="res://.godot/imported/agarrar carta.mp3-5a91e3019650f8440e11262a10d23587.mp3str"
+
+[deps]
+
+source_file="res://sfx/agarrar carta.mp3"
+dest_files=["res://.godot/imported/agarrar carta.mp3-5a91e3019650f8440e11262a10d23587.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

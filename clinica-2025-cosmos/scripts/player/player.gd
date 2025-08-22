@@ -9,6 +9,9 @@ signal projectile_shot
 @onready var current_power_up = $PowerUpsContainer/CurrentPowerUp
 @onready var other_power_up = $PowerUpsContainer/OtherPowerUp
 
+@onready var shoot_sfx = $Shoot_SFX
+@onready var drop_card_pick_up_sfx = $DropCardPickUp_SFX
+
 var friction : float = 1000
 
 var stronger_fire_powerup: PowerUp_StrongCard = null
@@ -35,7 +38,7 @@ func _ready() -> void:
 	PlayerPowerUps.other_power_up_container = other_power_up
 	check_connected_joypad()
 	move_speed = 750
-	hp_max = 3
+	hp_max = 5
 	hp_system.init(hp_max)
 	#TODO: HP Bar.
 	hp_system.died.connect(on_Died)
@@ -116,6 +119,7 @@ func shoot():
 		var muzzle_position = muzzle.global_position
 		var projectile_instance = load(projectile_path)
 		projectile_shot.emit(projectile_instance, muzzle_position, aim_angle, aim_direction)
+		shoot_sfx.play()
 	
 func manage_spread(path: String):
 	var projectile_1 = load(path)
@@ -131,16 +135,12 @@ func manage_spread(path: String):
 	projectile_shot.emit(projectile_1, muzzle_position, aim_angle_1, aim_direction_1)
 	projectile_shot.emit(projectile_2, muzzle_position, aim_angle_2, aim_direction_2)
 	projectile_shot.emit(projectile_3, muzzle_position, aim_angle_3, aim_direction_3)
+	shoot_sfx.play()
+	shoot_sfx.play()
+	shoot_sfx.play()
 
 func manage_animation():
 	pass
-
-# Checks for contact with other objects. Verifies through class name.
-func _on_monitorable_area_2d_area_entered(area):
-	var areaParent = area.get_parent()
-	if areaParent is Monster || areaParent is MonsterProjectile:
-		var damage = (areaParent).damage
-		hp_system.apply_damage(damage)
 
 # Disables all functions. Called from signal.
 func on_Died():
@@ -153,4 +153,12 @@ func on_Died():
 	animated_sprite_2d.visible = false
 	monitorable_collision_shape_2d.set_deferred("disabled",true)
 	monitoring_collision_shape_2d.set_deferred("disabled",true)
-	#get_tree().change_scene_to_file() #Either reset stage or send to lose screen
+	get_tree().reload_current_scene()
+
+func _on_monitoring_area_2d_area_entered(area):
+	var areaParent = area.get_parent()
+	if areaParent is Monster || areaParent is MonsterProjectile:
+		var damage = areaParent.damage
+		hp_system.apply_damage(damage)
+	elif areaParent is Drop:
+		drop_card_pick_up_sfx.play()
