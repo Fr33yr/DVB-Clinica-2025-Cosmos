@@ -44,3 +44,11 @@ func use_powerup():
 			equiped_powerups["current"] = equiped_powerups["other"]
 			equiped_powerups["other"] = {}
 			emit_signal("powerup_change", equiped_powerups)
+			
+func reset_powerups():
+	equiped_powerups = {
+	"current": {},
+	"other": {}
+	}
+	
+	emit_signal("powerup_change", equiped_powerups)

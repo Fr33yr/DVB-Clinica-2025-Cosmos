@@ -153,6 +153,7 @@ func on_Died():
 	animated_sprite_2d.visible = false
 	monitorable_collision_shape_2d.set_deferred("disabled",true)
 	monitoring_collision_shape_2d.set_deferred("disabled",true)
+	PlayerPowerUps.reset_powerups()
 	get_tree().reload_current_scene()
 
 func _on_monitoring_area_2d_area_entered(area):
