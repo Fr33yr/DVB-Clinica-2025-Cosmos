@@ -40,7 +40,6 @@ func _ready() -> void:
 	move_speed = 750
 	hp_max = 5
 	hp_system.init(hp_max)
-	#TODO: HP Bar.
 	hp_system.died.connect(on_Died)
 	super()
 
@@ -163,3 +162,5 @@ func _on_monitoring_area_2d_area_entered(area):
 		hp_system.apply_damage(damage)
 	elif areaParent is Drop:
 		drop_card_pick_up_sfx.play()
+		if areaParent is Drop_Restore_Vitality:
+			hp_system.restore_hp(1)

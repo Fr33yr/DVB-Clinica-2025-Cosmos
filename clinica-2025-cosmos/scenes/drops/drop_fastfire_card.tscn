@@ -1,16 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2ff51xlqunnk"]
 
 [ext_resource type="Script" uid="uid://wdru715fnurv" path="res://scripts/drops/drop_fastfire_card.gd" id="1_w8ofy"]
-[ext_resource type="Texture2D" uid="uid://b4o74i3itvuys" path="res://assets/Sketches/FastFireCard.png" id="2_nhqmq"]
+[ext_resource type="Texture2D" uid="uid://7vi1acfd7hpd" path="res://assets/Cards/NUEVAS3.png" id="2_nhqmq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spl1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8ofy"]
-size = Vector2(52, 92)
+size = Vector2(191, 280)
 
 [node name="DropFastfireCard" type="StaticBody2D"]
 z_index = -1
 y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_w8ofy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -23,7 +24,7 @@ texture = ExtResource("2_nhqmq")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, -1)
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_w8ofy")
 
 [node name="Timer" type="Timer" parent="."]

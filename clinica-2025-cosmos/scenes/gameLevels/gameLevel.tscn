@@ -67,27 +67,27 @@ position_smoothing_speed = 10.0
 editor_draw_limits = true
 
 [node name="SpawnPoint_1" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
-position = Vector2(654, -2078)
+position = Vector2(882, -1722)
 scale = Vector2(2, 2)
 
 [node name="SpawnPoint_2" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
-position = Vector2(-514, -2078)
+position = Vector2(-734, -1730)
 scale = Vector2(2, 2)
 
 [node name="SpawnPoint_3" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
-position = Vector2(-1224, -2084)
+position = Vector2(-2076, -1712)
 scale = Vector2(2, 2)
 
 [node name="SpawnPoint_4" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
-position = Vector2(1332, -2084)
+position = Vector2(2016, -1712)
 scale = Vector2(2, 2)
 
 [node name="SpawnPoint_5" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
-position = Vector2(-1908, -1658)
+position = Vector2(-2060, 432)
 scale = Vector2(2, 2)
 
 [node name="SpawnPoint_6" type="Marker2D" parent="GameLayer/LevelManager/Player/Camera2D"]
-position = Vector2(1946, -1690)
+position = Vector2(2066, 452)
 scale = Vector2(2, 2)
 
 [node name="ProjectileContainer" type="Node2D" parent="GameLayer/LevelManager"]
@@ -98,7 +98,7 @@ y_sort_enabled = true
 top_level = true
 
 [node name="LimitTop" type="CollisionShape2D" parent="GameLayer/LevelManager/WorldLimits"]
-position = Vector2(0, -6150)
+position = Vector2(0, -7000)
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_7sn1t")
 

@@ -44,7 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://niowg4i6lntj" path="res://assets/Monsters/DemonPez/caminar/caminar1_0013_caminar_13.png.png" id="40_tfwum"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cfwg5"]
-radius = 1920.0
+radius = 2220.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tfl2c"]
 radius = 33.0
@@ -203,6 +203,7 @@ script = ExtResource("1_i73a5")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector_Area2D"]
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_cfwg5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -229,6 +230,10 @@ sprite_frames = SubResource("SpriteFrames_o5sc4")
 animation = &"Attack"
 autoplay = "Idle"
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2, -62)
+scale = Vector2(7, 14)
+
 [node name="HP_System" parent="." instance=ExtResource("3_tla12")]
 
 [node name="HP_Bar" parent="." instance=ExtResource("4_w5nxb")]
@@ -241,4 +246,6 @@ autostart = true
 [connection signal="area_entered" from="Detector_Area2D" to="." method="_on_detector_area_2d_area_entered"]
 [connection signal="area_exited" from="Detector_Area2D" to="." method="_on_detector_area_2d_area_exited"]
 [connection signal="area_entered" from="Monitoring_Area2D" to="." method="_on_monitoring_area_2d_area_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="ShootingTimer" to="." method="_on_shooting_timer_timeout"]

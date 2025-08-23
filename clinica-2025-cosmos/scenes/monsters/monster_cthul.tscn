@@ -36,7 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://drx0h6w48dsh3" path="res://assets/Monsters/DemonEye/caminar/eye-caminar_0009_skeleton-caminando-pulpo_09.png.png" id="32_xt7l2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4cfns"]
-radius = 1920.0
+radius = 2220.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxmyf"]
 radius = 24.0
@@ -175,6 +175,7 @@ script = ExtResource("1_sc77l")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector_Area2D"]
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_4cfns")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -7,7 +7,7 @@ class_name Monster
 
 @onready var hp_bar: HPBar = $HP_Bar
 
-var chase_speed: float = 300
+var chase_speed: float = 200
 
 @onready var patrol_path: Array[Marker2D]
 @onready var patrol_wait_time: float
@@ -120,14 +120,16 @@ func manage_drops():
 	var numero = randi_range(1,20)
 	var drop: StaticBody2D
 	
-	if numero == 1:
+	if numero <= 2:
 		drop = load("res://scenes/drops/drop_strong_card.tscn").instantiate()
-	if numero == 2:
+	elif numero >= 3 && numero <= 4:
 		drop = load("res://scenes/drops/drop_fire_shield.tscn").instantiate()
-	if numero ==3:
+	elif numero >= 5 && numero <= 6:
 		drop = load("res://scenes/drops/drop_fastfire_card.tscn").instantiate()
-	if numero == 4:
+	elif numero >= 7 && numero <= 8:
 		drop = load("res://scenes/drops/drop_spread_card.tscn").instantiate()
+	elif numero == 9:
+		drop = load("res://scenes/drops/drop_restore_vitality.tscn").instantiate()
 		
 	if drop != null:
 		drop.global_position = entity.global_position

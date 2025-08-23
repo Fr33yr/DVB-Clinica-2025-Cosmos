@@ -1,17 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwp4ijodtm2co"]
 
 [ext_resource type="Script" uid="uid://5dl3o3ybaaw8" path="res://scripts/drops/drop_fire_shield.gd" id="1_b7avf"]
-[ext_resource type="Texture2D" uid="uid://ccfvcqj6l8wj6" path="res://assets/Sketches/fireball_drop.png" id="2_i6epi"]
+[ext_resource type="Texture2D" uid="uid://ovg0kobu3yg2" path="res://assets/Cards/NUEVAS2.png" id="2_i6epi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7avf"]
 size = Vector2(30, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6epi"]
-size = Vector2(56, 96)
+size = Vector2(188, 276)
 
 [node name="DropFireShield" type="StaticBody2D"]
 z_index = -1
 y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_b7avf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -28,7 +29,7 @@ y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 texture_filter = 2
-position = Vector2(2, -1)
+position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_i6epi")
 
 [node name="Timer" type="Timer" parent="."]

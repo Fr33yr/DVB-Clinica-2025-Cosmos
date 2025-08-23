@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkmhytgyk1rnu"]
+
+[ext_resource type="Script" uid="uid://bqh42q2alg8xp" path="res://drop_restore_vitality.gd" id="1_vxwvj"]
+[ext_resource type="Texture2D" uid="uid://e8shs8g8ttoh" path="res://assets/Cards/NUEVAS 5.png" id="2_8s0qc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jaqtx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekxjc"]
+size = Vector2(190, 280)
+
+[node name="Drop_restore_vitality" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_vxwvj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jaqtx")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8s0qc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ekxjc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

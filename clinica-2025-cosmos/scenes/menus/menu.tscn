@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxv03xw8xs4eb"]
+[gd_scene load_steps=5 format=3 uid="uid://cxv03xw8xs4eb"]
 
 [ext_resource type="Script" uid="uid://b3nngjkberne2" path="res://scripts/menus/menu.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://c3nlfoqnscbe3" path="res://assets/Scenario/mapa juego@0,5x.jpg" id="2_65ltr"]
 [ext_resource type="Texture2D" uid="uid://btbayffdduvea" path="res://assets/Buttons/button_circle_wide.svg" id="3_4ytvr"]
+[ext_resource type="AudioStream" uid="uid://na84rlgrkd6w" path="res://music/PORNO GAY INTERRACIAL.wav" id="4_cfcag"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -58,6 +59,11 @@ mouse_filter = 2
 text = "EXIT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cfcag")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]

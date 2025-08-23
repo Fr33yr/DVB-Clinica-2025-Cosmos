@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhsvn7klaynmo"]
 
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_7e3k0"]
-[ext_resource type="Script" uid="uid://vtlrn6aw0ebs" path="res://scripts/screen_controls.gd" id="1_euh3a"]
+[ext_resource type="Script" uid="uid://vtlrn6aw0ebs" path="res://scripts/ui/screen_controls.gd" id="1_euh3a"]
 [ext_resource type="Texture2D" uid="uid://cmn81btag3823" path="res://assets/Buttons/button_circle.png" id="2_m41qk"]
 [ext_resource type="Texture2D" uid="uid://dtc8a664ouhmi" path="res://assets/Buttons/icon_burst.svg" id="3_35jxk"]
 [ext_resource type="Texture2D" uid="uid://myrplcfpbx23" path="res://assets/Buttons/icon_button_r.svg" id="4_tpnoy"]
@@ -110,15 +110,19 @@ script = ExtResource("6_euh3a")
 
 [node name="OtherPowUp" type="TextureRect" parent="Control/PowerUps"]
 layout_mode = 0
-offset_left = -70.0
-offset_right = -6.0
-offset_bottom = 64.0
+offset_left = -150.0
+offset_top = 125.0
+offset_right = -86.0
+offset_bottom = 189.0
+rotation = -1.5708
+scale = Vector2(0.75, 0.75)
 
 [node name="CurrentPowUp" type="TextureRect" parent="Control/PowerUps"]
 layout_mode = 0
+offset_top = 200.0
 offset_right = 64.0
-offset_bottom = 64.0
-scale = Vector2(1.5, 1.5)
+offset_bottom = 264.0
+rotation = -1.5708
 
 [node name="PlayerHPBar" parent="Control" instance=ExtResource("8_euh3a")]
 

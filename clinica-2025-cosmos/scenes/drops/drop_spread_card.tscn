@@ -1,28 +1,29 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnnqykfobdvms"]
 
 [ext_resource type="Script" uid="uid://dhe10w41a3f3r" path="res://scripts/drops/drop_spread_card.gd" id="1_sbxea"]
-[ext_resource type="Texture2D" uid="uid://dq1b0ar6uxp1v" path="res://assets/Sketches/spread_card_drop.png" id="2_yk88p"]
+[ext_resource type="Texture2D" uid="uid://bvfb4jh4oa4ck" path="res://assets/Cards/NUEVAS 3.png" id="2_yk88p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbxea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yk88p"]
-size = Vector2(58, 91)
+size = Vector2(189, 279)
 
 [node name="DropSpreadCard" type="StaticBody2D"]
 z_index = -1
 y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_sbxea")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_yk88p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sbxea")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yk88p")
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(4, -0.5)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_yk88p")
 
 [node name="Timer" type="Timer" parent="."]

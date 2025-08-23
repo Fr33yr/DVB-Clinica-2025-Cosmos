@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://na84rlgrkd6w"
+path="res://.godot/imported/PORNO GAY INTERRACIAL.wav-ec53574e5f2913783297a652489d217c.sample"
+
+[deps]
+
+source_file="res://music/PORNO GAY INTERRACIAL.wav"
+dest_files=["res://.godot/imported/PORNO GAY INTERRACIAL.wav-ec53574e5f2913783297a652489d217c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
