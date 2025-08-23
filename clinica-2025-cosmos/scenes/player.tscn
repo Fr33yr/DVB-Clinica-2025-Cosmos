@@ -1,22 +1,28 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmd2rv33dxeu2"]
+[gd_scene load_steps=31 format=3 uid="uid://dmd2rv33dxeu2"]
 
 [ext_resource type="Script" uid="uid://dxy6bc066u671" path="res://scripts/player/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://cvppx4rmrrcqu" path="res://assets/Sketches/personajes-demogorgon_0007_Capa-2.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://jb6myrxucpsv" path="res://assets/Player/caminar/caminata_0012_quieto.png.png" id="3_4ni07"]
 [ext_resource type="Script" uid="uid://q0iivc0ro1cv" path="res://scripts/player/muzzle.gd" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://tv8hlohyhaex" path="res://scenes/commons/hp_system.tscn" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://c1kfqq331cdcd" path="res://assets/Player/caminar/caminata_0001_caminar_0000_caminar_00.png.png.png" id="4_l71n6"]
+[ext_resource type="Texture2D" uid="uid://cnk3iugmt5n28" path="res://assets/Player/caminar/caminata_0002_caminar_0001_caminar_01.png.png.png" id="5_ke2ow"]
 [ext_resource type="AudioStream" uid="uid://ds7vbvnswgy8w" path="res://sfx/shoots.wav" id="5_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://bk8ngug72bbke" path="res://sfx/carta.mp3" id="6_tuyoq"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_dqkch")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://dbetbgxnhwr2q" path="res://assets/Player/caminar/caminata_0003_caminar_0002_caminar_02.png.png.png" id="6_ujl30"]
+[ext_resource type="Texture2D" uid="uid://ccxbwjf7nif54" path="res://assets/Player/caminar/caminata_0004_caminar_0003_caminar_03.png.png.png" id="7_31cv2"]
+[ext_resource type="Texture2D" uid="uid://bg108vobmurgs" path="res://assets/Player/caminar/caminata_0005_caminar_0004_caminar_04.png.png.png" id="8_pf23h"]
+[ext_resource type="Texture2D" uid="uid://c5kqdnclu243j" path="res://assets/Player/caminar/caminata_0006_caminar_0005_caminar_05.png.png.png" id="9_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://1dw5mxfannkf" path="res://assets/Player/caminar/caminata_0007_caminar_0006_caminar_06.png.png.png" id="10_wqfne"]
+[ext_resource type="Texture2D" uid="uid://b7cdfdk8nbadb" path="res://assets/Player/caminar/caminata_0008_caminar_0007_caminar_07.png.png.png" id="11_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://d00q2a4fyt7dy" path="res://assets/Player/caminar/caminata_0009_caminar_0008_caminar_08.png.png.png" id="12_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://gs0jxunc6cmq" path="res://assets/Player/caminar/caminata_0010_caminar_0009_caminar_09.png.png.png" id="13_487ah"]
+[ext_resource type="Texture2D" uid="uid://byyqfsiwxwsdi" path="res://assets/Player/caminar/caminata_0011_caminar_0010_caminar_10.png.png.png" id="14_md1ol"]
+[ext_resource type="Texture2D" uid="uid://2rqhyk46x161" path="res://assets/Player/torso_0000_Capa-2.png" id="15_bj30b"]
+[ext_resource type="Texture2D" uid="uid://dexiveuljqxvy" path="res://assets/Player/torso_0001_Capa-1.png" id="16_jc3p3"]
+[ext_resource type="Texture2D" uid="uid://dkm4avpkexdbv" path="res://assets/Player/cabezas/cabezas_0003_Capa-1.png" id="17_hax0n"]
+[ext_resource type="Texture2D" uid="uid://lukbyp5qtpax" path="res://assets/Player/cabezas/cabezas_0002_Capa-2.png" id="18_t4otl"]
+[ext_resource type="Texture2D" uid="uid://c2durgcpq35rw" path="res://assets/Player/cabezas/cabezas_0001_Capa-3.png" id="19_j2b1d"]
+[ext_resource type="Texture2D" uid="uid://qwpqqdyp0dan" path="res://assets/Player/cabezas/cabezas_0000_Capa-4.png" id="20_cs1tg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
 radius = 40.0
@@ -25,6 +31,109 @@ height = 180.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
 radius = 40.0
 height = 180.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4ni07")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_31cv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pf23h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dt7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wqfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_487ah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_md1ol")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 16.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2dvfe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_bj30b")
+}],
+"loop": true,
+"name": &"Look_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_jc3p3")
+}],
+"loop": true,
+"name": &"Look_Up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_giy8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_hax0n")
+}],
+"loop": true,
+"name": &"Look_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_t4otl")
+}],
+"loop": true,
+"name": &"Look_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_j2b1d")
+}],
+"loop": true,
+"name": &"Look_Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_cs1tg")
+}],
+"loop": true,
+"name": &"Look_Up",
+"speed": 5.0
+}]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tuyoq"]
 random_pitch = 1.1
@@ -40,12 +149,6 @@ stream_0/stream = ExtResource("6_tuyoq")
 y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_g2els")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.38419e-07, -2.38419e-07)
-sprite_frames = SubResource("SpriteFrames_dqkch")
-animation = &"Idle"
-autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qlg0r")
@@ -64,6 +167,26 @@ shape = SubResource("CapsuleShape2D_dqkch")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 script = ExtResource("3_qhqgy")
+
+[node name="AnimatedSprite2D_PIERNAS" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(2.38419e-07, -2.38419e-07)
+sprite_frames = SubResource("SpriteFrames_dqkch")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.785513
+
+[node name="AnimatedSprite2D_TORSO" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_2dvfe")
+animation = &"Look_Up"
+autoplay = "Look_Up"
+
+[node name="AnimatedSprite2D_CABEZA" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_giy8y")
+animation = &"Look_Up"
+autoplay = "Look_Up"
 
 [node name="ShootingTimer" type="Timer" parent="."]
 wait_time = 0.2

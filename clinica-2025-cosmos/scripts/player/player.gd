@@ -12,6 +12,10 @@ signal projectile_shot
 @onready var shoot_sfx = $Shoot_SFX
 @onready var drop_card_pick_up_sfx = $DropCardPickUp_SFX
 
+@onready var animated_sprite_2d_piernas = $AnimatedSprite2D_PIERNAS
+@onready var animated_sprite_2d_torso = $AnimatedSprite2D_TORSO
+@onready var animated_sprite_2d_cabeza = $AnimatedSprite2D_CABEZA
+
 var friction : float = 1000
 
 var stronger_fire_powerup: PowerUp_StrongCard = null
@@ -139,7 +143,26 @@ func manage_spread(path: String):
 	shoot_sfx.play()
 
 func manage_animation():
-	pass
+	if velocity == Vector2.ZERO:
+		animated_sprite_2d_piernas.play("Idle")
+	else:
+		animated_sprite_2d_piernas.play("Move")
+	
+	if aim_direction.y > 0:
+		animated_sprite_2d_torso.play("Look_Down")
+	elif aim_direction.y < 0:
+		animated_sprite_2d_torso.play("Look_Up")
+	
+	if aim_direction.x > aim_direction.y && aim_direction.x > 0:
+		animated_sprite_2d_cabeza.play("Look_Right")
+	elif aim_direction.x > aim_direction.y && aim_direction.x < 0:
+		animated_sprite_2d_cabeza.play("Look_Left")
+	
+	if aim_direction.y > aim_direction.x && aim_direction.y > 0:
+		animated_sprite_2d_cabeza.play("Look_Down")
+	elif aim_direction.y > aim_direction.x && aim_direction.y < 0:
+		animated_sprite_2d_cabeza.play("Look_Up")
+	
 
 # Disables all functions. Called from signal.
 func on_Died():
@@ -149,7 +172,6 @@ func on_Died():
 	collision_shape_2d.disabled = true
 	monitorable_area_2d.monitoring = false
 	monitoring_area_2d.monitorable = false
-	animated_sprite_2d.visible = false
 	monitorable_collision_shape_2d.set_deferred("disabled",true)
 	monitoring_collision_shape_2d.set_deferred("disabled",true)
 	PlayerPowerUps.reset_powerups()

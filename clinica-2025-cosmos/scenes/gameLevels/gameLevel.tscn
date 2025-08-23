@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://vn7htn43g5t4"]
+[gd_scene load_steps=12 format=3 uid="uid://vn7htn43g5t4"]
 
 [ext_resource type="Script" uid="uid://drc1c4v3g310a" path="res://scripts/commons/GameLevel.gd" id="1_croed"]
 [ext_resource type="PackedScene" uid="uid://ba1ofrwmy30rc" path="res://scenes/commons/enemy_spawn_zone.tscn" id="2_hu8pu"]
@@ -6,13 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://c3nlfoqnscbe3" path="res://assets/Scenario/mapa juego@0,5x.jpg" id="3_j30t8"]
 [ext_resource type="Texture2D" uid="uid://dvk32l3uuqqgx" path="res://assets/Scenario/mano final.png" id="4_7y2xr"]
 [ext_resource type="PackedScene" uid="uid://dmd2rv33dxeu2" path="res://scenes/player.tscn" id="4_j30t8"]
-[ext_resource type="AudioStream" uid="uid://bfam2cw331pub" path="res://music/esquizofrenia.wav" id="6_hu8pu"]
+[ext_resource type="AudioStream" uid="uid://cjnyiuqgs0cuv" path="res://music/PORNO GAY TACTICO.wav" id="7_j30t8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7sn1t"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hu8pu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j30t8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j30t8"]
+radius = 58.8558
 
 [node name="GameManager" type="Node"]
 
@@ -24,7 +27,7 @@ y_sort_enabled = true
 script = ExtResource("1_croed")
 
 [node name="EnemySpawnActivator" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
-position = Vector2(0, -1076)
+position = Vector2(0, -667)
 enemy_spawners = [NodePath("../Player/Camera2D/SpawnPoint_1"), NodePath("../Player/Camera2D/SpawnPoint_2"), NodePath("../Player/Camera2D/SpawnPoint_3"), NodePath("../Player/Camera2D/SpawnPoint_4"), NodePath("../Player/Camera2D/SpawnPoint_5"), NodePath("../Player/Camera2D/SpawnPoint_6")]
 zone_duration = 30.0
 spawn_delay = 3.0
@@ -32,14 +35,14 @@ spawn_delay = 3.0
 [node name="EnemySpawnActivator2" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
 position = Vector2(0, -2608)
 enemy_spawners = [NodePath("../Player/Camera2D/SpawnPoint_1"), NodePath("../Player/Camera2D/SpawnPoint_2"), NodePath("../Player/Camera2D/SpawnPoint_3"), NodePath("../Player/Camera2D/SpawnPoint_4"), NodePath("../Player/Camera2D/SpawnPoint_5"), NodePath("../Player/Camera2D/SpawnPoint_6")]
-zone_duration = 40.0
-spawn_delay = 2.0
+zone_duration = 45.0
+spawn_delay = 2.5
 
 [node name="EnemySpawnActivator3" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
 position = Vector2(0, -4748)
 enemy_spawners = [NodePath("../Player/Camera2D/SpawnPoint_1"), NodePath("../Player/Camera2D/SpawnPoint_2"), NodePath("../Player/Camera2D/SpawnPoint_3"), NodePath("../Player/Camera2D/SpawnPoint_4"), NodePath("../Player/Camera2D/SpawnPoint_5"), NodePath("../Player/Camera2D/SpawnPoint_6")]
 zone_duration = 60.0
-spawn_delay = 1.0
+spawn_delay = 2.0
 
 [node name="Background" type="Sprite2D" parent="GameLayer/LevelManager"]
 show_behind_parent = true
@@ -116,11 +119,20 @@ position = Vector2(1110, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_j30t8")
 
+[node name="Area2D" type="Area2D" parent="GameLayer/LevelManager"]
+position = Vector2(0, -7000)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameLayer/LevelManager/Area2D"]
+shape = SubResource("CircleShape2D_j30t8")
+
 [node name="ScreenControls" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_hu8pu")]
 layer = 5
 player = NodePath("../GameLayer/LevelManager/Player")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_hu8pu")
+stream = ExtResource("7_j30t8")
 autoplay = true
 bus = &"Music"
+
+[connection signal="area_entered" from="GameLayer/LevelManager/Area2D" to="GameLayer/LevelManager" method="_on_area_2d_area_entered"]

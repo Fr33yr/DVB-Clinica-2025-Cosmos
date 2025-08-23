@@ -44,7 +44,10 @@ func use_powerup():
 			equiped_powerups["current"] = equiped_powerups["other"]
 			equiped_powerups["other"] = {}
 			emit_signal("powerup_change", equiped_powerups)
-			
+	elif equiped_powerups["other"].has("powerUp"):
+		swap_powerup()
+		use_powerup()
+
 func reset_powerups():
 	equiped_powerups = {
 	"current": {},
