@@ -24,6 +24,7 @@ func _ready():
 func _on_spawn_area_2d_area_entered(area):
 	var areaParent = area.get_parent()
 	if areaParent is Player && !already_activated:
+		player = areaParent
 		already_activated = true
 		spawn_delay_timer.start()
 		zone_duration_timer.start()

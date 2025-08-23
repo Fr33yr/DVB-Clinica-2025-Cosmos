@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxv03xw8xs4eb"]
 
 [ext_resource type="Script" uid="uid://b3nngjkberne2" path="res://scripts/menus/menu.gd" id="1_con2f"]
-[ext_resource type="Texture2D" uid="uid://br5duginld5kn" path="res://assets/chess_bg.png" id="2_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://c3nlfoqnscbe3" path="res://assets/Scenario/mapa juego@0,5x.jpg" id="2_65ltr"]
 [ext_resource type="Texture2D" uid="uid://btbayffdduvea" path="res://assets/Buttons/button_circle_wide.svg" id="3_4ytvr"]
 
 [node name="Menu" type="Control"]
@@ -15,16 +15,18 @@ script = ExtResource("1_con2f")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_mhnvy")
+offset_left = -142.0
+offset_top = -2858.0
+offset_right = 2078.0
+offset_bottom = 5743.0
+texture = ExtResource("2_65ltr")
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 365.0
-offset_top = 361.0
-offset_right = 493.0
-offset_bottom = 493.0
+offset_left = 806.0
+offset_top = 320.0
+offset_right = 934.0
+offset_bottom = 452.0
 scale = Vector2(2, 2)
 
 [node name="Start" type="TextureButton" parent="Buttons"]
@@ -37,6 +39,7 @@ offset_left = 24.0
 offset_top = 9.0
 offset_right = 107.0
 offset_bottom = 57.0
+mouse_filter = 2
 text = "START"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -51,6 +54,7 @@ offset_left = 24.0
 offset_top = 9.0
 offset_right = 107.0
 offset_bottom = 57.0
+mouse_filter = 2
 text = "EXIT"
 horizontal_alignment = 1
 vertical_alignment = 1

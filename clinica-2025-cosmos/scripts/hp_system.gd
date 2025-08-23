@@ -10,6 +10,7 @@ var hp_max: int
 var hp_current :int
 var already_dead: bool = false
 
+
 func init(total_hp: int):
 	hp_max = total_hp
 	hp_current = total_hp

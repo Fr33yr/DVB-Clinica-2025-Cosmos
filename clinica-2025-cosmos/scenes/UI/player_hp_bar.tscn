@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://b566wvgyulwfy"]
+
+[ext_resource type="Script" uid="uid://bl8itya0ldltf" path="res://scripts/player_hp_bar.gd" id="1_pa61v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euh3a"]
+bg_color = Color(0, 0, 0, 0.705882)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_au3qc"]
+bg_color = Color(0, 0.360784, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 1, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="PlayerHPBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pa61v")
+
+[node name="HP_Bar" type="ProgressBar" parent="."]
+layout_mode = 1
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 550.0
+offset_bottom = 100.0
+theme_override_styles/background = SubResource("StyleBoxFlat_euh3a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_au3qc")
+step = 1.0
+value = 100.0
+rounded = true
+show_percentage = false

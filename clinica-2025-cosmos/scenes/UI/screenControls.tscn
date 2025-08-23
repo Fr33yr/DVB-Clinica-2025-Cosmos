@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhsvn7klaynmo"]
+[gd_scene load_steps=9 format=3 uid="uid://bhsvn7klaynmo"]
 
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_7e3k0"]
+[ext_resource type="Script" uid="uid://vtlrn6aw0ebs" path="res://scripts/screen_controls.gd" id="1_euh3a"]
 [ext_resource type="Texture2D" uid="uid://cmn81btag3823" path="res://assets/Buttons/button_circle.png" id="2_m41qk"]
 [ext_resource type="Texture2D" uid="uid://dtc8a664ouhmi" path="res://assets/Buttons/icon_burst.svg" id="3_35jxk"]
 [ext_resource type="Texture2D" uid="uid://myrplcfpbx23" path="res://assets/Buttons/icon_button_r.svg" id="4_tpnoy"]
 [ext_resource type="Texture2D" uid="uid://cio8s5lctgtq8" path="res://assets/Buttons/icon_fire.svg" id="5_vb61p"]
 [ext_resource type="Script" uid="uid://ojy2cdnivfk" path="res://scripts/ui/power_ups.gd" id="6_euh3a"]
+[ext_resource type="PackedScene" uid="uid://b566wvgyulwfy" path="res://scenes/UI/player_hp_bar.tscn" id="8_euh3a"]
 
-[node name="ScreenControls" type="CanvasLayer"]
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_euh3a")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -116,6 +119,8 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 scale = Vector2(1.5, 1.5)
+
+[node name="PlayerHPBar" parent="Control" instance=ExtResource("8_euh3a")]
 
 [connection signal="pressed" from="Control/RightStick/Suffle_Anchor/TextureRect/SwitchPowUp" to="Control/PowerUps" method="_on_switch_pow_up_pressed"]
 [connection signal="pressed" from="Control/LeftStick/PowerUp_Anchor/TextureRect/PowerUp" to="Control/PowerUps" method="_on_power_up_pressed"]

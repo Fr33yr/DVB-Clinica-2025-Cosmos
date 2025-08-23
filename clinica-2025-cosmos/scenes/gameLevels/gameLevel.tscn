@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://vn7htn43g5t4"]
+[gd_scene load_steps=11 format=3 uid="uid://vn7htn43g5t4"]
 
 [ext_resource type="Script" uid="uid://drc1c4v3g310a" path="res://scripts/commons/GameLevel.gd" id="1_croed"]
-[ext_resource type="Texture2D" uid="uid://br5duginld5kn" path="res://assets/chess_bg.png" id="2_7sn1t"]
 [ext_resource type="PackedScene" uid="uid://ba1ofrwmy30rc" path="res://scenes/commons/enemy_spawn_zone.tscn" id="2_hu8pu"]
 [ext_resource type="PackedScene" uid="uid://bhsvn7klaynmo" path="res://scenes/UI/screenControls.tscn" id="3_hu8pu"]
+[ext_resource type="Texture2D" uid="uid://c3nlfoqnscbe3" path="res://assets/Scenario/mapa juego@0,5x.jpg" id="3_j30t8"]
+[ext_resource type="Texture2D" uid="uid://dvk32l3uuqqgx" path="res://assets/Scenario/mano final.png" id="4_7y2xr"]
 [ext_resource type="PackedScene" uid="uid://dmd2rv33dxeu2" path="res://scenes/player.tscn" id="4_j30t8"]
 [ext_resource type="AudioStream" uid="uid://bfam2cw331pub" path="res://music/esquizofrenia.wav" id="6_hu8pu"]
 
@@ -22,67 +23,44 @@ follow_viewport_enabled = true
 y_sort_enabled = true
 script = ExtResource("1_croed")
 
-[node name="EnemySpawnZone" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
-position = Vector2(0, -1000)
+[node name="EnemySpawnActivator" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
+position = Vector2(0, -1076)
 enemy_spawners = [NodePath("../Player/Camera2D/SpawnPoint_1"), NodePath("../Player/Camera2D/SpawnPoint_2"), NodePath("../Player/Camera2D/SpawnPoint_3"), NodePath("../Player/Camera2D/SpawnPoint_4"), NodePath("../Player/Camera2D/SpawnPoint_5"), NodePath("../Player/Camera2D/SpawnPoint_6")]
 zone_duration = 30.0
 spawn_delay = 3.0
 
-[node name="EnemySpawnZone2" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
-position = Vector2(0, -3000)
+[node name="EnemySpawnActivator2" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
+position = Vector2(0, -2608)
 enemy_spawners = [NodePath("../Player/Camera2D/SpawnPoint_1"), NodePath("../Player/Camera2D/SpawnPoint_2"), NodePath("../Player/Camera2D/SpawnPoint_3"), NodePath("../Player/Camera2D/SpawnPoint_4"), NodePath("../Player/Camera2D/SpawnPoint_5"), NodePath("../Player/Camera2D/SpawnPoint_6")]
 zone_duration = 40.0
 spawn_delay = 2.0
 
-[node name="EnemySpawnZone3" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
-position = Vector2(0, -5000)
+[node name="EnemySpawnActivator3" parent="GameLayer/LevelManager" node_paths=PackedStringArray("enemy_spawners") instance=ExtResource("2_hu8pu")]
+position = Vector2(0, -4748)
 enemy_spawners = [NodePath("../Player/Camera2D/SpawnPoint_1"), NodePath("../Player/Camera2D/SpawnPoint_2"), NodePath("../Player/Camera2D/SpawnPoint_3"), NodePath("../Player/Camera2D/SpawnPoint_4"), NodePath("../Player/Camera2D/SpawnPoint_5"), NodePath("../Player/Camera2D/SpawnPoint_6")]
 zone_duration = 60.0
 spawn_delay = 1.0
-
-[node name="Background6" type="Sprite2D" parent="GameLayer/LevelManager"]
-z_index = -5
-y_sort_enabled = true
-position = Vector2(0, -5000)
-texture = ExtResource("2_7sn1t")
-
-[node name="Background5" type="Sprite2D" parent="GameLayer/LevelManager"]
-z_index = -5
-y_sort_enabled = true
-position = Vector2(0, -4000)
-texture = ExtResource("2_7sn1t")
-
-[node name="Background4" type="Sprite2D" parent="GameLayer/LevelManager"]
-z_index = -5
-y_sort_enabled = true
-position = Vector2(0, -3000)
-texture = ExtResource("2_7sn1t")
-
-[node name="Background3" type="Sprite2D" parent="GameLayer/LevelManager"]
-z_index = -5
-y_sort_enabled = true
-position = Vector2(0, -2000)
-texture = ExtResource("2_7sn1t")
-
-[node name="Background2" type="Sprite2D" parent="GameLayer/LevelManager"]
-z_index = -5
-y_sort_enabled = true
-position = Vector2(0, -1000)
-texture = ExtResource("2_7sn1t")
 
 [node name="Background" type="Sprite2D" parent="GameLayer/LevelManager"]
 show_behind_parent = true
 z_index = -5
 y_sort_enabled = true
-texture = ExtResource("2_7sn1t")
+position = Vector2(0, -3800)
+texture = ExtResource("3_j30t8")
+
+[node name="ManoFinal" type="Sprite2D" parent="GameLayer/LevelManager"]
+y_sort_enabled = true
+position = Vector2(-725, -6759)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_7y2xr")
 
 [node name="Player" parent="GameLayer/LevelManager" instance=ExtResource("4_j30t8")]
-position = Vector2(0, 400)
+position = Vector2(0, 200)
 
 [node name="Camera2D" type="Camera2D" parent="GameLayer/LevelManager/Player"]
 y_sort_enabled = true
-limit_left = -1080
-limit_right = 1080
+limit_left = -1110
+limit_right = 1110
 limit_bottom = 500
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
@@ -119,22 +97,28 @@ y_sort_enabled = true
 [node name="WorldLimits" type="StaticBody2D" parent="GameLayer/LevelManager"]
 top_level = true
 
+[node name="LimitTop" type="CollisionShape2D" parent="GameLayer/LevelManager/WorldLimits"]
+position = Vector2(0, -6150)
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_7sn1t")
+
 [node name="LimitBottom" type="CollisionShape2D" parent="GameLayer/LevelManager/WorldLimits"]
-position = Vector2(0, 500)
+position = Vector2(0, 390)
 shape = SubResource("WorldBoundaryShape2D_7sn1t")
 
 [node name="Limit Left" type="CollisionShape2D" parent="GameLayer/LevelManager/WorldLimits"]
-position = Vector2(-1080, 0)
+position = Vector2(-1110, 0)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_hu8pu")
 
 [node name="LimitRight" type="CollisionShape2D" parent="GameLayer/LevelManager/WorldLimits"]
-position = Vector2(1080, 0)
+position = Vector2(1110, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_j30t8")
 
-[node name="ScreenControls" parent="." instance=ExtResource("3_hu8pu")]
+[node name="ScreenControls" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_hu8pu")]
 layer = 5
+player = NodePath("../GameLayer/LevelManager/Player")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_hu8pu")
